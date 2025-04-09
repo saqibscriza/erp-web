@@ -1,5 +1,6 @@
 import { Box, Button, Grid, Typography, Stack, IconButton, Menu, MenuItem } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 import { Link, useLocation } from 'react-router-dom'; // <-- Import useLocation
 import NavLogo from "../../assets/images/NavLogo.png";
 import { useState } from "react";
@@ -12,6 +13,12 @@ const navItems = [
     { name: 'Testimonials', path: '/testimonials' },
     { name: 'Contact', path: '/contact' },
 ];
+
+
+import NavLogo from "../../assets/images/NavLogo.png"
+
+
+const navItems = ['Home', 'About Us', 'FAQ', 'Testimonials', 'Contact'];
 
 
 const Navbar = () => {
