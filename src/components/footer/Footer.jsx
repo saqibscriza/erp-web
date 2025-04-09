@@ -17,8 +17,9 @@ const Footer = () => {
                                 <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 4 }}>
                                     <img src={Location} alt="" />
                                     <Box sx={{}}>
-                                        <Typography sx={{ mb: 2 }}>Address:</Typography>
+                                    
                                         <Typography>A-4-5, A Block, Sector 16, Noida</Typography>
+                                        <Typography sx={{ mb: 2 }}>Address:</Typography>
                                     </Box>
                                 </Box>
                             </Box>
