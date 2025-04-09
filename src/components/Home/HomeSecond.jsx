@@ -12,7 +12,7 @@ const HomeSecond = () => {
             <Grid container spacing={4} alignItems="center">
 
                 {/* Left Section - Images */}
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                     <Box display="flex" flexDirection={{ xs: 'column', sm: 'row', md: 'column' }} gap={2}>
                         <Box component="img" src={Image1} height={300} width={200} alt="student" borderRadius={2} />
 
@@ -24,21 +24,21 @@ const HomeSecond = () => {
                 </Grid>
 
                 {/* Right Section - Content */}
-                <Grid item xs={12} md={6}>
-                    <Typography variant="subtitle2" color="#E38C53" fontWeight={600} gutterBottom>
+                <Grid item size={{ xs: 12, md: 6 }}>
+                    <Typography sx={{ color: "#F28F53", fontSize: "14px", fontWeight: 400 }} gutterBottom>
                         EDU2ALL SECURITY
                     </Typography>
 
-                    <Typography variant="h4" fontWeight={700} mb={2} color="#0D1B2A">
+                    <Typography sx={{ color: "#0E2A46", fontSize: "45px", fontWeight: 700 }} >
                         Why Choose Us?
                     </Typography>
 
-                    <Typography variant="body1" color="text.secondary" mb={3}>
+                    <Typography sx={{ color: "#4D5756", fontSize: "17px", fontWeight: 400, mb: 2 }}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
                     </Typography>
 
                     <Grid container spacing={2} mb={3}>
-                        <Grid item xs={6}>
+                        <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography variant="subtitle1" fontWeight={700} color="#0D1B2A">
                                 Customer Centricity:
                             </Typography>
@@ -47,7 +47,7 @@ const HomeSecond = () => {
                             </Typography>
                         </Grid>
 
-                        <Grid item xs={6}>
+                        <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography variant="subtitle1" fontWeight={700} color="#0D1B2A">
                                 Product Usability:
                             </Typography>
@@ -67,13 +67,15 @@ const HomeSecond = () => {
                     <Button
                         variant="contained"
                         sx={{
+                            position: 'relative',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-between',
-                            backgroundColor: '#3D7D75', // Green part
+                            backgroundColor: '#04857A', // Green part
                             borderRadius: '50px',
-                            px: 3,
-                            py: 1.5,
+                            pr: 10,
+                            pl: 4,
+                            py: .5,
                             textTransform: 'none',
                             color: '#fff',
                             '&:hover': {
@@ -82,16 +84,20 @@ const HomeSecond = () => {
                             width: { xs: '100%', md: 'auto' },
                         }}
                     >
-                        <Typography variant="body1" sx={{ fontWeight: 500 }}>
+                        <Typography variant="body1" sx={{ fontWeight: 400, fontSize: "15px", lineHeight: "58px" }}>
                             Book A Free Demo
                         </Typography>
 
                         <Box
                             sx={{
+                                position: 'absolute',  // Absolute positioning
+                                right: 0,              // Stick to right
+                                top: '50%',
+                                transform: 'translateY(-50%)',
                                 backgroundColor: '#E38A4A',  // Orange part
                                 borderRadius: '50%',
-                                width: 50,
-                                height: 50,
+                                width: 65,
+                                height: 65,
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -104,7 +110,7 @@ const HomeSecond = () => {
                 </Grid>
 
             </Grid>
-        </Box>
+        </Box >
     )
 }
 

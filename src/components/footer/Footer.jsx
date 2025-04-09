@@ -18,40 +18,41 @@ const Footer = () => {
                 backgroundPosition: 'center',
             }}>
                 {/* Address , Phone & Email */}
-                <Container maxWidth="lg" sx={{ py: 4 }}>
+                <Container sx={{ borderBottom: "1px solid white" }}>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={4}>
-                            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+                        <Grid size={{ xs: 12, sm: 4 }} sx={{}}>
+                            <Box sx={{
+                                display: 'flex', gap: 2, alignItems: 'center', borderRight: { xs: 'none', md: '1px solid white' },
+                                borderBottom: { xs: '1px solid white', md: 'none' },
+                                p: 4
+                            }}>
                                 <img src={Location} alt="" />
                                 <Box>
                                     <Typography sx={{ mb: 1 }}>Address:</Typography>
                                     <Typography>A-4-5, A Block, Sector 16, Noida</Typography>
-
-                            <Box>
-                                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 4 }}>
-                                    <img src={Location} alt="" />
-                                    <Box sx={{}}>
-                                    <Typography sx={{ mb: 2 }}>Address:</Typography>
-                                        <Typography>A-4-5, A Block, Sector 16, Noida</Typography>
-                                        
-                                    </Box>
-
                                 </Box>
                             </Box>
+
                         </Grid>
-                        <Divider orientation="vertical" flexItem sx={{ borderColor: "rgba(255,255,255,0.3)" }} />
-                        <Grid item xs={12} md={4}>
-                            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+
+                        <Grid item size={{ xs: 12, sm: 4 }}>
+                            <Box sx={{
+                                display: 'flex', gap: 2, alignItems: 'center', borderRight: { xs: 'none', md: '1px solid white' },
+                                borderBottom: { xs: '1px solid white', md: 'none' },
+                                p: 4.6
+                            }}>
                                 <img src={Phone} alt="" />
                                 <Box>
                                     <Typography sx={{ mb: 1 }}>Phone:</Typography>
                                     <Typography>(+91)911-601 1899</Typography>
                                 </Box>
+
                             </Box>
+
                         </Grid>
-                        <Divider orientation="vertical" flexItem sx={{ borderColor: "rgba(255,255,255,0.3)" }} />
-                        <Grid item xs={12} md={4}>
-                            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+
+                        <Grid item size={{ xs: 12, sm: 4 }}>
+                            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', p: 4 }}>
                                 <img src={Email} alt="" />
                                 <Box>
                                     <Typography sx={{ mb: 1 }}>Email:</Typography>
@@ -62,15 +63,18 @@ const Footer = () => {
                     </Grid>
                 </Container>
 
-                <Divider sx={{ borderColor: "rgba(255,255,255,0.3)", my: 3 }} />
+
+
+
 
                 {/* Footer Middle Section */}
                 <Container maxWidth="lg" sx={{ py: 4 }}>
-                    <Grid container spacing={4}>
+                    <Grid container spacing={4} sx={{ display: 'flex' }}>
                         {/* Logo & Social */}
-                        <Grid item xs={12} md={4}>
+                        <Grid size={{ xs: 12, md: 4 }}
+                        >
                             <img src={Logo} alt="" style={{ marginBottom: 16 }} />
-                            <Typography variant="body2" sx={{ mb: 2, maxWidth: '300px' }}>
+                            <Typography variant="body2" sx={{ mb: 2, color: "#ffffff", fontWeight: 400, fontSize: "17px" }}>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquam iusto, perspiciatis quis culpa.
                             </Typography>
                             <Box>
@@ -82,7 +86,8 @@ const Footer = () => {
                         </Grid>
 
                         {/* Links */}
-                        <Grid item xs={12} md={4}>
+                        <Grid item size={{ xs: 12, md: 4 }}
+                        >
                             <Typography sx={{ fontWeight: 700, mb: 2 }}>Our Services:</Typography>
                             {['Home', 'About Us', 'FAQ', 'Contact Us'].map((item) => (
                                 <Typography sx={{ mb: 1 }} key={item}>{item}</Typography>
@@ -90,7 +95,8 @@ const Footer = () => {
                         </Grid>
 
                         {/* Subscribe */}
-                        <Grid item xs={12} md={4}>
+                        <Grid item size={{ xs: 12, md: 4 }}
+                        >
                             <Typography sx={{ fontWeight: 700, mb: 2 }}>Subscribe</Typography>
                             <OutlinedInput
                                 placeholder="Enter your email"
@@ -102,11 +108,12 @@ const Footer = () => {
                             </Button>
                         </Grid>
                     </Grid>
+
                 </Container>
 
                 {/* Copyright */}
                 <Box textAlign="center" sx={{ bgcolor: "#04857A", p: 2 }}>
-                    <Typography variant="body2" sx={{ color: "white" }}>
+                    <Typography variant="body2" sx={{ color: "#ffffff", fontWeight: 400, fontSize: "17px" }}>
                         Copyright © 2025 <b style={{ color: "#2FC7A1" }}>edu2all</b> | All Rights Reserved
                     </Typography>
                 </Box>
