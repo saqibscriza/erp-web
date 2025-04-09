@@ -1,6 +1,12 @@
 import { Box, Button, Container, Grid, TextField, Typography, Paper, IconButton, FormControl, OutlinedInput, InputLabel, MenuItem, Select, FormHelperText } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import HomeFirstLine from "../../assets/images/HomeFirstLine.png";
+import HomeFirst20Modules from "../../assets/images/HomeFirst20Modules.png";
+import HomeFirstIcon from "../../assets/images/HomeFirstIcon.png";
+
+
+
 const HomeFirst = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
@@ -14,14 +20,14 @@ const HomeFirst = () => {
             <Container sx={{ bgcolor: '#f4f0f8', py: { xs: 12, sm: 10 } }}>
                 <Grid container spacing={4}>
 
-                    <Grid item xs={12} md={6}>
-                        <Typography sx={{ color: "#704FE6", fontSize: "17px", fontWeight: 400 }}>WELCOME EDU2ALL SCHOOL ERP</Typography>
+                    <Grid item size={{ xs: 12, md: 7 }}>
+                        <Typography sx={{ color: "#704FE6", fontSize: "17px", fontWeight: 400, mb: 1.5 }}>WELCOME EDU2ALL SCHOOL ERP</Typography>
                         <Typography
                             variant="h1"
                             sx={{
-                                fontSize: { xs: '32px', md: '48px' },
+                                fontSize: { xs: '32px', md: '49px' },
                                 fontWeight: 700,
-                                lineHeight: { xs: '35px', md: '55px' },
+                                lineHeight: { xs: '35px', md: '61px' },
                                 color: '#17254E',
                                 mb: 2,
                             }}
@@ -36,64 +42,104 @@ const HomeFirst = () => {
                                 fontWeight: 400,
                                 lineHeight: { xs: '22px', md: '28px' },
                                 color: '#333931',
-                                mb: 3,
-
+                                mb: 6,
                             }}
-
                         >
-                            All-in-one <b>school management software</b> with <b>20+ modules</b> to automate
+                            All-in-one <b style={{ color: "", fontSize: "15px", fontWeight: 700 }}>school management software</b> with <b>20+ modules</b> to automate
                             administration, enhance learning, and improve efficiency for educational institutions.
                         </Typography>
 
 
-                        <Button
-                            variant="contained"
+                        <Box
                             sx={{
                                 display: 'flex',
+                                flexDirection: { xs: 'column', md: 'row' },
                                 alignItems: 'center',
                                 justifyContent: 'space-between',
-                                backgroundColor: '#3D7D75', // Green part
-                                borderRadius: '50px',
-                                px: 3,
-                                py: 1.5,
-                                textTransform: 'none',
-                                color: '#fff',
-                                '&:hover': {
-                                    backgroundColor: '#346B65',
-                                },
-                                width: { xs: '100%', md: 'auto' },
+                                gap: 4,
                             }}
                         >
-                            <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                                Book A Free Demo
-                            </Typography>
+                            {/* Left - Button */}
+                            <Box sx={{ flexShrink: 0 }}>
+                                <Button
+                                    variant="contained"
+                                    sx={{
+                                        position: 'relative',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-between',
+                                        backgroundColor: '#04857A',
+                                        borderRadius: '50px',
+                                        pr: 10,
+                                        pl: 4,
+                                        py: 0.5,
+                                        textTransform: 'none',
+                                        color: '#fff',
+                                        '&:hover': {
+                                            backgroundColor: '#346B65',
+                                        },
+                                        width: { xs: '100%', md: 'auto' },
+                                    }}
+                                >
+                                    <Typography
+                                        variant="body1"
+                                        sx={{ fontWeight: 400, fontSize: '15px', lineHeight: '58px' }}
+                                    >
+                                        Book A Free Demo
+                                    </Typography>
 
-                            <Box
-                                sx={{
-                                    backgroundColor: '#E38A4A',  // Orange part
-                                    borderRadius: '50%',
-                                    width: 50,
-                                    height: 50,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    ml: 2,
-                                }}
-                            >
-                                <ArrowForwardIcon sx={{ color: '#fff' }} />
+                                    <Box
+                                        sx={{
+                                            position: 'absolute',
+                                            right: 0,
+                                            top: '50%',
+                                            transform: 'translateY(-50%)',
+                                            backgroundColor: '#E38A4A',
+                                            borderRadius: '50%',
+                                            width: 65,
+                                            height: 65,
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            ml: 2,
+                                        }}
+                                    >
+                                        <ArrowForwardIcon sx={{ color: '#fff' }} />
+                                    </Box>
+                                </Button>
                             </Box>
-                        </Button>
+
+                            {/* Right - Images */}
+                            <Box>
+                                <Container sx={{ display: 'flex', gap: 2 }}>
+                                    <Box
+                                        component="img"
+                                        src={HomeFirstLine} // update path
+                                        alt="Line Design"
+                                        width="20%"
+                                    />
+                                    <Box
+                                        component="img"
+                                        src={HomeFirst20Modules} // update path
+                                        alt="Modules Design"
+                                        width="30%"
+                                    />
+                                </Container>
+                            </Box>
+                        </Box>
 
 
 
                     </Grid>
 
-                    <Grid item xs={12} md={6}>
+                    <Grid item size={{ xs: 12, md: 5 }}>
                         <Box p={4} sx={{ backgroundColor: '#0D1B2A', color: 'white', borderRadius: 2 }}>
-                            <Typography variant="subtitle1" color="#E38C53" fontWeight={600}>
-                                GET IN TOUCH
-                            </Typography>
-
+                            <Box sx={{ display: "flex", gap: 1 }}>
+                                <img src={HomeFirstIcon} alt="" width={30} height={30} />
+                                <Typography variant="subtitle1" sx={{ fontWeight: 600, color: "#F28F53", fontSize: "18px" }}>
+                                    GET IN TOUCH
+                                </Typography>
+                            </Box>
                             <Typography variant="h4" fontWeight={700} mt={1} mb={3}>
                                 Book A Free Demo
                             </Typography>

@@ -1,6 +1,6 @@
 import { Box, Typography, Button, Stack } from "@mui/material";
 import BG from "../../assets/images/getInTouchBG.jpeg"
-
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const GetInTouch = () => {
     return (
         <Box
@@ -15,8 +15,7 @@ const GetInTouch = () => {
                 px: 2,
                 color: "white",
                 mb: 2,
-                // backgroundColor:'#0E2A46'
-                
+
             }}
         >
             <Box
@@ -24,6 +23,7 @@ const GetInTouch = () => {
                     maxWidth: "1200px",
                     margin: "0 auto",
                     textAlign: { xs: "center", md: "left" },
+
                 }}
             >
                 <Typography variant="subtitle1" color="#F4A300" mb={1}>
@@ -51,18 +51,45 @@ const GetInTouch = () => {
                 <Button
                     variant="contained"
                     sx={{
-                        backgroundColor: "#3A7E76",
-                        borderRadius: "30px",
-                        px: 4,
-                        py: 1.5,
-                        fontWeight: 600,
-                        textTransform: "none",
-                        "&:hover": {
-                            backgroundColor: "#2f655e",
+                        position: 'relative',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        backgroundColor: '#04857A', // Green part
+                        borderRadius: '50px',
+                        pr: 10,
+                        pl: 4,
+                        py: .5,
+                        textTransform: 'none',
+                        color: '#fff',
+                        '&:hover': {
+                            backgroundColor: '#346B65',
                         },
+                        width: { xs: '100%', md: 'auto' },
                     }}
                 >
-                    Book A Free Demo
+                    <Typography variant="body1" sx={{ fontWeight: 400, fontSize: "15px", lineHeight: "58px" }}>
+                        Book A Free Demo
+                    </Typography>
+
+                    <Box
+                        sx={{
+                            position: 'absolute',  // Absolute positioning
+                            right: 0,              // Stick to right
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                            backgroundColor: '#E38A4A',  // Orange part
+                            borderRadius: '50%',
+                            width: 65,
+                            height: 65,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            ml: 2,
+                        }}
+                    >
+                        <ArrowForwardIcon sx={{ color: '#fff' }} />
+                    </Box>
                 </Button>
             </Box>
         </Box>

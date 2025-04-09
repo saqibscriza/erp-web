@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, Card, CardContent, Avatar, Stack } from "@mui/material";
+import { Box, Grid, Typography, Card, CardContent, Avatar, Stack, Button } from "@mui/material";
 import SchoolIcon from '@mui/icons-material/School';
 import PeopleIcon from '@mui/icons-material/People';
 import GroupIcon from '@mui/icons-material/Group';
@@ -24,7 +24,7 @@ const Community = () => {
         }}>
 
             {/* Top Green Stats Box */}
-            <Box
+            {/* <Box
                 sx={{
                     backgroundColor: "#3A7E76",
                     backgroundImage: `url('.png')`,
@@ -58,14 +58,83 @@ const Community = () => {
 
                     </Box>
                 ))}
+            </Box> */}
+
+            <Box
+                sx={{
+                    backgroundColor: "#3A7E76",
+                    backgroundImage: `url('.png')`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    borderRadius: "50px",
+                    px: { xs: 2, sm: 3, md: 5 },  // Responsive padding
+                    py: { xs: 2, sm: 2.5, md: 3 },
+                    position: "absolute",
+                    left: "50%",
+                    top: 0,
+                    transform: "translate(-50%, -50%)",
+                    display: "flex",
+                    gap: { xs: 2, sm: 3, md: 5 },
+
+                    justifyContent: "center",
+                    color: "white",
+                    zIndex: 2,
+                }}
+            >
+                {stats.map((item, index) => (
+                    <Box
+                        key={index}
+                        sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 1,
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Avatar
+                            sx={{
+                                bgcolor: "white",
+                                color: "#3A7E76",
+                                mb: 1,
+                                width: { xs: 32, sm: 40, md: 50 },   // Responsive Avatar size
+                                height: { xs: 32, sm: 40, md: 50 },
+                            }}
+                        >
+                            {item.icon}
+                        </Avatar>
+
+                        <Box>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    fontSize: { xs: "16px", sm: "18px", md: "20px", lg: "22px" },
+                                }}
+                            >
+                                {item.number}
+                            </Typography>
+
+                            <Typography
+                                variant="body2"
+                                sx={{
+                                    fontSize: { xs: "12px", sm: "13px", md: "14px", lg: "15px" },
+                                }}
+                            >
+                                {item.label}
+                            </Typography>
+                        </Box>
+                    </Box>
+                ))}
             </Box>
 
+
             {/* White Testimonial Section */}
-            <Box sx={{ pt: 5 }}>
-                <Typography variant="caption" sx={{ color: "#3A7E76", display: "block", textAlign: "center" }}>
+            <Box sx={{ pt: 5, textAlign: "center" }}>
+
+                <Button sx={{ bgcolor: "#C6EBE8", color: "#04857A", mb: 3 }}>
                     TESTIMONIAL
-                </Typography>
-                <Typography variant="h4" sx={{ textAlign: "center", fontWeight: 700, mb: 5 }}>
+                </Button>
+                <Typography variant="h4" sx={{ fontWeight: 700, mb: 5 }}>
                     Creating A Community Of <br /> Life Long Learners.
                 </Typography>
 

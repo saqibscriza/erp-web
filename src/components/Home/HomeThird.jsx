@@ -6,7 +6,7 @@ const HomeThird = () => {
         <Box sx={{ py: { xs: 8, md: 12 } }}>
             <Grid container spacing={4} alignItems="center">
                 {/* Left Side - Images */}
-                <Grid item xs={12} md={6}>
+                <Grid item size={{ xs: 12, md: 6 }}>
                     <Box position="relative" display="flex" flexWrap="wrap" gap={2}>
                         {/* Image 1 */}
                         <Box
@@ -59,22 +59,22 @@ const HomeThird = () => {
                 </Grid>
 
                 {/* Right Side - Content */}
-                <Grid item xs={12} md={6}>
-                    <Typography variant="overline" color="primary.main" fontWeight={700}>
+                <Grid item size={{ xs: 12, md: 6 }}>
+                    <Typography sx={{ color: "#F28F53", fontSize: "14px", fontWeight: 400 }} gutterBottom>
                         About Us
                     </Typography>
 
-                    <Typography variant="h4" fontWeight={700} mb={2}>
+                    <Typography sx={{ color: "#0E2A46", fontSize: "45px", fontWeight: 700, mb: 2 }} >
                         We Build Software That Works Like The World Around You.
                     </Typography>
 
-                    <Typography color="text.secondary" mb={4}>
+                    <Typography x={{ color: "#4D5756", fontSize: "17px", fontWeight: 400, mb: 4 }}>
                         We've seen projects fail due to poor planning and communication.
                         We're here to ensure yours succeeds — seamlessly and on time.
                     </Typography>
 
-                    <Grid container spacing={4}>
-                        <Grid item xs={12} sm={6}>
+                    <Grid container spacing={4} sx={{ mt: 2, mb: 2 }}>
+                        <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography fontWeight={700} gutterBottom>
                                 Our Mission:
                             </Typography>
@@ -83,7 +83,7 @@ const HomeThird = () => {
                             </Typography>
                         </Grid>
 
-                        <Grid item xs={12} sm={6}>
+                        <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography fontWeight={700} gutterBottom>
                                 Our Vision:
                             </Typography>
@@ -96,13 +96,15 @@ const HomeThird = () => {
                     <Button
                         variant="contained"
                         sx={{
+                            position: 'relative',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-between',
-                            backgroundColor: '#3D7D75', // Green part
+                            backgroundColor: '#04857A', // Green part
                             borderRadius: '50px',
-                            px: 3,
-                            py: 1.5,
+                            pr: 10,
+                            pl: 4,
+                            py: .5,
                             textTransform: 'none',
                             color: '#fff',
                             '&:hover': {
@@ -111,16 +113,20 @@ const HomeThird = () => {
                             width: { xs: '100%', md: 'auto' },
                         }}
                     >
-                        <Typography variant="body1" sx={{ fontWeight: 500 }}>
+                        <Typography variant="body1" sx={{ fontWeight: 400, fontSize: "15px", lineHeight: "58px" }}>
                             Book A Free Demo
                         </Typography>
 
                         <Box
                             sx={{
+                                position: 'absolute',  // Absolute positioning
+                                right: 0,              // Stick to right
+                                top: '50%',
+                                transform: 'translateY(-50%)',
                                 backgroundColor: '#E38A4A',  // Orange part
                                 borderRadius: '50%',
-                                width: 50,
-                                height: 50,
+                                width: 65,
+                                height: 65,
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
