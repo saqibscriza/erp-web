@@ -1,6 +1,8 @@
 import { Box, Button, Grid, Typography, Stack } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import NavLogo from "../../assets/images/NavLogo.png"
+
+
 const navItems = ['Home', 'About Us', 'FAQ', 'Testimonials', 'Contact'];
 
 const Navbar = () => {

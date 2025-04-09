@@ -10,10 +10,13 @@ const GetInTouch = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
+                // opacity:1,
                 py: 10,
                 px: 2,
                 color: "white",
                 mb: 2,
+                // backgroundColor:'#0E2A46'
+                
             }}
         >
             <Box
