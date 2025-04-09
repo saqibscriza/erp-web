@@ -27,6 +27,10 @@ const Community = () => {
             <Box
                 sx={{
                     backgroundColor: "#3A7E76",
+                    backgroundImage: `url('.png')`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
                     borderRadius: "50px",
                     px: 5,
                     py: 3,
