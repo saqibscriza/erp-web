@@ -12,13 +12,16 @@ const tabData = [
 const FeatureLayout = () => {
     const location = useLocation();
 
-    const currentTab = tabData.findIndex((tab) =>
-        location.pathname.startsWith(tab.path)
-    );
+    const currentTab = tabData.findIndex((tab) => {
+        if (location.pathname === '/' && tab.path === '') return true;
+        if (tab.path !== '' && location.pathname.includes(tab.path)) return true;
+        return false;
+    });
+
 
     return (
-        <Box sx={{ p: 8 }}>
-            {/* Navbar Part */}
+        <Box sx={{ p: 8, bgcolor: 'lightgray' }}>
+            {/* Heading */}
             <Box sx={{ py: 3, textAlign: "center" }}>
                 <Typography variant="h4" fontWeight="bold">
                     50+ Powerful Modules For Seamless School Management
@@ -29,7 +32,7 @@ const FeatureLayout = () => {
             <Tabs
                 value={currentTab}
                 centered
-                TabIndicatorProps={{ style: { background: "#FF9F43" } }}
+                TabIndicatorProps={{ style: { display: "none" } }} // Hide default underline
             >
                 {tabData.map((tab, index) => (
                     <Tab
@@ -37,7 +40,15 @@ const FeatureLayout = () => {
                         label={tab.label}
                         component={Link}
                         to={tab.path}
-                        sx={{ textTransform: "none", fontWeight: "bold" }}
+                        sx={{
+                            textTransform: "none",
+                            fontWeight: "bold",
+                            backgroundColor: currentTab === index ? "#fff" : "transparent",
+                            borderBottom: currentTab === index ? "3px solid #FF9F43" : "3px solid transparent",
+                            color: currentTab === index ? "#000" : "inherit",
+                            borderRadius: "8px 8px 0 0",
+                            transition: "all 0.3s ease",
+                        }}
                     />
                 ))}
             </Tabs>

@@ -9,6 +9,10 @@ import StudentManagement from './Pages/features/StudentManagement'
 import TransportationManagement from './Pages/features/TransportationManagement'
 import ExamManagement from './Pages/features/ExamManagement'
 import HRManagement from './Pages/features/HRManagement'
+import FAQ from './Pages/FAQ'
+import Testimonials from './Pages/Testimonials'
+import Contact from './Pages/Contact'
+import FeatureLayout from './Pages/features/FeatureLayout'
 
 function App() {
 
@@ -20,14 +24,20 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home />}>
-            <Route index element={<AcademicsManagement />} />
-            <Route path='student-management' element={<StudentManagement />} />
-            <Route path='transportation-management' element={<TransportationManagement />} />
-            <Route path='exam-management' element={<ExamManagement />} />
-            <Route path='hr-management' element={<HRManagement />} />
+            {/* Nested Route for Features */}
+            <Route element={<FeatureLayout />}>
+              <Route index element={<AcademicsManagement />} />
+              <Route path='student-management' element={<StudentManagement />} />
+              <Route path='transportation-management' element={<TransportationManagement />} />
+              <Route path='exam-management' element={<ExamManagement />} />
+              <Route path='hr-management' element={<HRManagement />} />
+            </Route>
           </Route>
 
           <Route path='/about' element={<About />} />
+          <Route path='/faq' element={<FAQ />} />
+          <Route path='/testimonials' element={<Testimonials />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
 
         <Footer />

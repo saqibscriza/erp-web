@@ -20,7 +20,7 @@ const Home = () => {
         <Box sx={{ height: "100%", alignContent: "center", mt: 10 }}>
             <HomeFirst />
             <HomeSecond />
-            <FeatureLayout />
+            <Outlet />
 
             <HomeThird />
             <BlogSection />

@@ -15,12 +15,6 @@ const navItems = [
 ];
 
 
-import NavLogo from "../../assets/images/NavLogo.png"
-
-
-const navItems = ['Home', 'About Us', 'FAQ', 'Testimonials', 'Contact'];
-
-
 const Navbar = () => {
     const location = useLocation();
     const [anchorEl, setAnchorEl] = useState(null);
@@ -48,7 +42,6 @@ const Navbar = () => {
                 px: { xs: 2, sm: 4, md: 12 },
             }}
         >
-
             {/* Hamburger Menu Icon for xs & sm */}
             <Box sx={{ display: { xs: "block", lg: "none" } }}>
                 <IconButton onClick={handleMenuOpen}>
