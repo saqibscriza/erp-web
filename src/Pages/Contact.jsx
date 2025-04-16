@@ -8,6 +8,7 @@ import {
     Button,
     InputLabel,
     FormControl,
+    IconButton,
 } from '@mui/material';
 import {
     LocationOn,
@@ -22,13 +23,30 @@ const Contact = () => {
                 Home <span style={{ color: '#F15A29' }}> // </span> Contact Us
             </SectionHeader>
 
-            <Box sx={{ bgcolor: "white", p: 7 }}>
+            <Box sx={{
+                bgcolor: "white", py: 3, px: 18,
+
+            }}>
 
 
 
-                <Box sx={{ px: { xs: 2, md: 5 }, py: 10, bgcolor: '#f4f4f4' }}>
-
-
+                <Box sx={{
+                    px: { xs: 2, md: 5 }, py: 7, bgcolor: '#f4f4f4', position: 'relative', // Add relative positioning
+                    overflow: 'hidden', // Ensure the triangle stays contained
+                    zIndex: 1,
+                    '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        width: 0,
+                        height: 0,
+                        borderStyle: 'solid',
+                        borderWidth: '150px 150px 150px 150px', // Adjust size as needed
+                        borderColor: 'transparent transparent #04857A #04857A', // Use your brand color
+                        zIndex: -1,
+                    }
+                }}>
                     <Grid container spacing={8}>
                         {/* Left Info Section */}
                         <Grid item size={{ xs: 12, md: 6 }}>
@@ -72,72 +90,83 @@ const Contact = () => {
                                 </Box>
                             </Box>
 
-                            {/* <Box sx={{ display: "flex", justifyContent: "space-between", gap: 30, mt: 5, }}>
-                                <Box sx={{ display: "flex", gap: 1 }}>
-                                    <img src="./ContactCustomer.svg" alt="" />
-                                    <Typography sx={{ color: "", wordWrap: "" }}>Customer care</Typography>
-                                </Box>
-                                <Box>
-                                    <img src="./ContactFb.svg" alt="" />
-                                    <img src="./ContactInsta.svg" alt="" />
-                                    <img src="./ContactPinterest.svg" alt="" />
-                                    <img src="./ContactTwitter.svg" alt="" />
-                                </Box>
-                            </Box> */}
-
-                            <Box sx={{
-                                display: "flex",
-                                flexDirection: { xs: "column", md: "row" }, // Stack on mobile, row on tablet+
-                                justifyContent: "flex-start",
-                                alignItems: "center", // Center items vertically
-                                gap: { xs: 3, md: 30 }, // Smaller gap on mobile
-                                mt: 5,
-                                px: { xs: 2, sm: 0 } // Add horizontal padding on mobile
-                            }}>
-                                {/* Customer Care */}
-                                <Box sx={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    gap: 1,
-                                    order: { xs: 2, sm: 1 } // Move to bottom on mobile
-                                }}>
-                                    <img
-                                        src="./ContactCustomer.svg"
-                                        alt="Customer care icon"
-                                        style={{ width: 24, height: 24 }} // Set explicit size
-                                    />
-                                    <Typography sx={{
-                                        color: "text.primary",
-                                        whiteSpace: "nowrap",
-                                        fontSize: { xs: "0.875rem", sm: "1rem" } // Responsive text size
-                                    }}>
-                                        Customer care
-                                    </Typography>
-                                </Box>
-
-                                {/* Social Icons */}
-                                <Box sx={{
-                                    display: "flex",
-                                    gap: { xs: 2, sm: .5 }, // Smaller gap on mobile
-                                    order: { xs: 1, sm: 2 } // Move to top on mobile
-                                }}>
-                                    {["./ContactFb.svg", "./ContactInsta.svg", "./ContactPinterest.svg", "./ContactTwitter.svg"].map((icon, index) => (
+                            <Grid
+                                container
+                                spacing={{ xs: 2, md: 19 }}
+                                sx={{
+                                    mt: 5,
+                                    px: { xs: 2, sm: 0 },
+                                    alignItems: "center"
+                                }}
+                            >
+                                {/* Customer Care - Will appear first on desktop, second on mobile */}
+                                <Grid
+                                    item
+                                    xs={12}
+                                    sm={6}
+                                    md="auto"
+                                    sx={{
+                                        order: { xs: 2, sm: 1 },
+                                        display: "flex",
+                                        justifyContent: { xs: "center", sm: "flex-start" }
+                                    }}
+                                >
+                                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                                         <img
-                                            key={index}
-                                            src={icon}
-                                            alt={`Social icon ${index}`}
-                                            style={{
-                                                width: { xs: 20, sm: 24 }, // Smaller on mobile
-                                                height: { xs: 20, sm: 24 },
-                                                transition: "transform 0.3s",
-                                                "&:hover": {
-                                                    transform: "scale(1.1)"
-                                                }
-                                            }}
+                                            src="./ContactCustomer.svg"
+                                            alt="Customer care icon"
+                                            style={{ width: 24, height: 24 }}
                                         />
-                                    ))}
-                                </Box>
-                            </Box>
+                                        <Typography sx={{
+                                            color: "white",
+                                            whiteSpace: "nowrap",
+                                            fontSize: { xs: "0.875rem", sm: "1rem" }
+                                        }}>
+                                            Customer care
+                                        </Typography>
+                                    </Box>
+                                </Grid>
+
+                                {/* Social Icons - Will appear second on desktop, first on mobile */}
+                                <Grid
+                                    item
+                                    xs={12}
+                                    sm={6}
+                                    md={true} // Takes remaining space
+                                    sx={{
+                                        order: { xs: 1, sm: 2 },
+                                        display: "flex",
+                                        justifyContent: { xs: "center", sm: "flex-end" }
+                                    }}
+                                >
+                                    <Box sx={{ display: "flex", gap: { xs: 2, sm: 0.1 } }}>
+                                        {["./ContactFb.svg", "./ContactInsta.svg", "./ContactPinterest.svg", "./ContactTwitter.svg"].map((icon, index) => (
+                                            <IconButton
+                                                key={index}
+                                                component="a"
+                                                href="#"
+                                                sx={{
+                                                    p: { xs: 0.5, sm: .5 },
+                                                    '&:hover': {
+                                                        transform: "scale(1.1)"
+                                                    }
+                                                }}
+                                            >
+                                                <img
+                                                    src={icon}
+                                                    alt={`Social icon ${index}`}
+                                                    style={{
+                                                        width: { xs: 20, sm: 24 },
+                                                        height: { xs: 20, sm: 24 }
+                                                    }}
+                                                />
+                                            </IconButton>
+                                        ))}
+                                    </Box>
+                                </Grid>
+                            </Grid>
+
+
                         </Grid>
 
                         {/* Right Form Section */}

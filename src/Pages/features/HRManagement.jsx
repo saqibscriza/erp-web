@@ -10,97 +10,94 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import PersonIcon from '@mui/icons-material/Person';
 import StarIcon from '@mui/icons-material/Star';
+import CirclePattern from "../../components/CirclePattern";
+import { useState } from "react";
 
 
 
-const features = [
+const modules = [
     {
-        title: "SALARY SETTING",
-        description:
-            "Access employee details like designation, pay head, amount type, and unit through our module.",
-        icon: <SettingsIcon fontSize="large" />,
+        title: "Class And Section",
+        desc: "A dashboard showcasing various classes and sections enhances productivity while minimizing power consumption.",
+        imageSrc: "./HR/1.svg",
     },
     {
-        title: "PAY HEAD",
-        description:
-            "Easily display, manage, and organize various master data types using our efficient module system.",
-        icon: <SubjectIcon fontSize="large" />,
+        title: "Syllabus",
+        desc: "Access, upload, and download questions from the question bank effortlessly using our module.",
+        imageSrc: "./HR/2.svg",
     },
     {
-        title: "PAY TYPE",
-        description:
-            "Effortlessly view and manage payment type and name entries using our module.",
-        icon: <CreditCardIcon fontSize="large" />,
+        title: "Lesson Planning",
+        desc: "Our module generates subject-specific online exams and provides HRs with fast results.",
+        imageSrc: "./HR/3.svg",
     },
     {
-        title: "GENERATE PAY SLEEP",
-        description:
-            "Our module generates pay slips and efficiently manages employee reports on a monthly and annual basis.",
-        icon: <ReceiptLongIcon fontSize="large" />,
+        title: "Exam Timetable",
+        desc: "Teachers use a mobile app to record HR attendance, and parents can view daily attendance reports.",
+        imageSrc: "./HR/4.svg",
     },
     {
-        title: "ACCOUNT MANAGEMENT",
-        description:
-            "Efficiently track bank and cash transactions, along with expenses and general vouchers using our module.",
-        icon: <AccountBalanceIcon fontSize="large" />,
+        title: "Admission Management",
+        desc: "Efficiently handle HR inquiries, streamline admission procedures, and register new HRs seamlessly.",
+        imageSrc: "./HR/5.svg",
     },
     {
-        title: "FEES MANAGEMENT",
-        description:
-            "Our module processes school payments, issues fee receipts, and updates the fee register, ensuring highly accurate data.",
-        icon: <AttachMoneyIcon fontSize="large" />,
+        title: "Circular",
+        desc: "We'll keep parents informed with future updates through the Circular display on the mobile app, accompanied by notifications.",
+        imageSrc: "./HR/6.svg",
     },
     {
-        title: "REPORTS",
-        description:
-            "Our module manages reports like Journal, Ledger, Trial Balance, Balance Sheet, and more efficiently.",
-        icon: <BarChartIcon fontSize="large" />,
+        title: "Certificate",
+        desc: "Our system facilitates the management and generation of TC and CC for seamless certification processes.",
+        imageSrc: "./HR/7.svg",
     },
     {
-        title: "HR MANAGEMENT",
-        description:
-            "Our module efficiently manages reports like Journal, Ledger, Trial Balance, Balance Sheet, and more.",
-        icon: <PersonIcon fontSize="large" />,
-    },
-    {
-        title: "MASTERS",
-        description:
-            "Our system efficiently manages Account Master, Expense Master, Bank/Cash Master, Tax Master, and other essential components.",
-        icon: <StarIcon fontSize="large" />,
-    },
+        title: "Department",
+        desc: "Incorporate HR performance in various reports, complete with signatures from teachers and the principal using our module.",
+        imageSrc: "./HR/8.svg",
+    }
 ];
 
 
 const HoverCard = styled(Paper)(({ theme }) => ({
-    padding: theme.spacing(3),
-    borderRadius: theme.spacing(2),
-    minHeight: "220px",
+    padding: theme.spacing(6),
+    borderRadius: theme.spacing(6),
+    minHeight: "250px",
     transition: "all 0.3s ease",
     cursor: "pointer",
     "&:hover": {
         backgroundColor: "#04857A",
         color: "#fff",
-        "& svg, & span": {
-            color: "#fff",
+        transform: "scale(1.05)",
+        "& .MuiTypography-root": {  // Target all Typography components
+            color: "#fff !important",
+        },
+        "& h3": {  // Specifically target the icon
+            color: "#fff !important",
         },
     },
 }));
 
 const HRManagement = () => {
+    const [hoveredIndex, setHoveredIndex] = useState(null);
     return (
 
         <Box sx={{ py: 5 }}>
             <Grid container spacing={3}>
-                {features.map((item, index) => (
+                {modules.map((item, index) => (
                     <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-                        <HoverCard elevation={2}>
+                        <HoverCard
+                            elevation={2}
+                            onMouseEnter={() => setHoveredIndex(index)}
+                            onMouseLeave={() => setHoveredIndex(null)}
+                        >
                             <Stack spacing={2}>
-                                <Typography variant="h3">{item.icon}</Typography>
-                                <Typography variant="h6" fontWeight="bold">
+                                <CirclePattern imageSrc={item.imageSrc} hovered={hoveredIndex === index} />
+                                <Typography sx={{ color: '#0E2A46', fontWeight: 700, fontSize: '20px' }}>
                                     {item.title}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {item.description}
+                                <Typography sx={{ color: '#4D5756', fontWeight: 400, fontSize: '16px' }}>
+                                    {item.desc}
                                 </Typography>
                             </Stack>
                         </HoverCard>

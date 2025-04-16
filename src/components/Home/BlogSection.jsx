@@ -29,7 +29,7 @@ const blogs = [
 
 const BlogSection = () => {
     return (
-        <Box px={12} py={4} sx={{ mb: 6 }}>
+        <Box px={22} py={4} sx={{ mb: 6 }}>
             {/* Section Heading */}
             <Box textAlign="left" mb={4}>
 
