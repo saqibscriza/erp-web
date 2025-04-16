@@ -3,7 +3,7 @@ import React from 'react'
 const About = () => {
     return (
         <div>
-            About 17/04/25
+            About 17/04/26
         </div>
     )
 }
