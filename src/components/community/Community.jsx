@@ -4,6 +4,13 @@ import PeopleIcon from '@mui/icons-material/People';
 import GroupIcon from '@mui/icons-material/Group';
 import StoreIcon from '@mui/icons-material/Store';
 import BG from "../../assets/images/communityBG.jpeg"
+import School from "/Community1.svg"
+import Teacher from "/Community2.svg"
+import Student from "/Community3.svg"
+import Distributor from "/Community4.svg"
+
+
+
 const stats = [
     { icon: <SchoolIcon />, number: "1K+", label: "Schools" },
     { icon: <PeopleIcon />, number: "4K+", label: "Teachers" },

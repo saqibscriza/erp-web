@@ -6,26 +6,93 @@ import Image3 from "../../assets/images/HomeSecond3.png"
 
 
 
-const HomeSecond = () => {
+const Security = () => {
     return (
-        <Box px={{ xs: 2, md: 8 }} py={{ xs: 4, md: 8 }}>
+        <Box px={{ xs: 2, md: 20 }} py={{ xs: 4, md: 0 }}>
             <Grid container spacing={4} alignItems="center">
 
                 {/* Left Section - Images */}
                 <Grid size={{ xs: 12, md: 6 }}>
-                    <Box display="flex" flexDirection={{ xs: 'column', sm: 'row', md: 'column' }} gap={2}>
-                        <Box component="img" src={Image1} height={300} width={200} alt="student" borderRadius={2} />
+                    <Box
+                        sx={{
+                            position: 'relative',
+                            width: '100%',
+                            maxWidth: '900px',
+                            height: { xs: 500, md: 600 },
+                            mx: 'auto',
+                            mt: 8,
+                        }}
+                    >
+                        {/* Image 1 - Top Left */}
+                        <Box
+                            component="img"
+                            src="./SecurityImage1.svg" // replace with your actual image path
+                            alt="Student 1"
+                            sx={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: { xs: '45%', md: '35%' },
+                                borderRadius: 2,
+                                objectFit: 'cover',
+                            }}
+                        />
 
-                        <Box display="flex" gap={2}>
-                            <Box component="img" src={Image2} alt="experience" width="50%" borderRadius={2} />
-                            <Box component="img" src={Image3} alt="students" width="50%" borderRadius={2} />
+                        {/* Image 2 - Bottom Right */}
+                        <Box
+                            component="img"
+                            src="./SecurityImage3.svg"
+                            alt="Students talking"
+                            sx={{
+                                position: 'absolute',
+                                bottom: 100,
+                                right: 90,
+                                width: { xs: '55%', md: '45%' },
+                                borderRadius: 2,
+                                objectFit: 'cover',
+                            }}
+                        />
+
+                        {/* Image 3 - Top Right (Experience Card) */}
+                        <Box
+                            component="img"
+                            src="./SecurityImage2.svg"
+                            sx={{
+                                position: 'absolute',
+                                top: 0,
+                                right: { xs: '25%', md: '25%' },
+                                width: 180,
+                                height: 180,
+                                border: '1px dashed #fb923c',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                boxShadow: 1,
+                            }}
+                        >
+
                         </Box>
+
+                        {/* Decorative shape (Top left corner) */}
+                        <Box
+                            component="img"
+                            src="./SecurityImage4.svg"
+                            alt="Shape"
+                            sx={{
+                                position: 'absolute',
+                                top: -30,
+                                left: -30,
+                                width: 50,
+                            }}
+                        />
                     </Box>
                 </Grid>
 
                 {/* Right Section - Content */}
-                <Grid item size={{ xs: 12, md: 6 }}>
-                    <Typography sx={{ color: "#F28F53", fontSize: "14px", fontWeight: 400 }} gutterBottom>
+                <Grid item size={{ xs: 12, md: 6, display: "flex", justifyContent: "flex-start", gap: 1, alignItems: "center" }}>
+                    <Typography sx={{ color: "#F28F53", fontSize: "14px", fontWeight: 400, display: "flex", justifyContent: "flex-start", gap: 1, alignItems: "center" }} gutterBottom>
+                        <img src="./SecurityIcon.svg" alt="" />
                         EDU2ALL SECURITY
                     </Typography>
 
@@ -114,4 +181,4 @@ const HomeSecond = () => {
     )
 }
 
-export default HomeSecond;
+export default Security;
