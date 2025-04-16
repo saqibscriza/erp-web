@@ -6,6 +6,7 @@ import Community from '../components/community/Community'
 
 const About = () => {
     return (
+
         <>
             <SectionHeader title="ABOUT US">
                 Home <span style={{ color: '#F15A29' }}> // </span> About Us
@@ -13,6 +14,15 @@ const About = () => {
             <AboutUs />
             <Community />
         </>
+
+
+        <div>
+            About 16/04/25
+        </div>
+
+        <HomeThird />
+
+
     )
 }
 
