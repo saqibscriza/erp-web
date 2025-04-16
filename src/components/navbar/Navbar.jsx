@@ -74,7 +74,7 @@ const Navbar = () => {
             {/* Logo */}
             <Link to="/">
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                    <img src={NavLogo} alt="Logo" width="120px" />
+                    <img src="./NavbarIcon.svg" alt="Logo" width="120px" />
                 </Box>
             </Link>
 
@@ -122,7 +122,7 @@ const Navbar = () => {
                             borderRadius: '50px',
                             pr: 10,
                             pl: 4,
-                            py: .5,
+                            py: .2,
                             textTransform: 'none',
                             color: '#fff',
                             '&:hover': {
@@ -132,7 +132,7 @@ const Navbar = () => {
                         }}
                     >
                         <Typography variant="body1" sx={{ fontWeight: 400, fontSize: "15px", lineHeight: "58px" }}>
-                            Book A Free Demo
+                            Free Demo
                         </Typography>
 
                         <Box
@@ -143,8 +143,8 @@ const Navbar = () => {
                                 transform: 'translateY(-50%)',
                                 backgroundColor: '#E38A4A',  // Orange part
                                 borderRadius: '50%',
-                                width: 65,
-                                height: 65,
+                                width: 60,
+                                height: 60,
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',

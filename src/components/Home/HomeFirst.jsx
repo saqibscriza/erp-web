@@ -17,10 +17,30 @@ const HomeFirst = () => {
 
     return (
         <>
-            <Container sx={{ bgcolor: '#f4f0f8', py: { xs: 12, sm: 10 } }}>
+            <Container
+                maxWidth={false}
+                sx={{
+                    position: 'relative',
+                    px: { xs: 12, sm: 20 },
+                    py: { xs: 12, sm: 4 },
+                    '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundImage: 'url(/HomeFirstBG.svg)', // Update with your image path
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        opacity: 0.1, // Adjust opacity as needed (0.1 = 10% visible)
+                        zIndex: 0,
+                        mt: 1
+                    }
+                }}>
                 <Grid container spacing={4}>
-
-                    <Grid item size={{ xs: 12, md: 7 }}>
+                    <Grid item size={{ xs: 12, md: 7 }} sx={{ py: 8 }}>
                         <Typography sx={{ color: "#704FE6", fontSize: "17px", fontWeight: 400, mb: 1.5 }}>WELCOME EDU2ALL SCHOOL ERP</Typography>
                         <Typography
                             variant="h1"
@@ -114,13 +134,13 @@ const HomeFirst = () => {
                                 <Container sx={{ display: 'flex', gap: 2 }}>
                                     <Box
                                         component="img"
-                                        src={HomeFirstLine} // update path
+                                        src="./HomeFirstLine.svg" // update path
                                         alt="Line Design"
                                         width="20%"
                                     />
                                     <Box
                                         component="img"
-                                        src={HomeFirst20Modules} // update path
+                                        src="./HomeFirst20+Modules.svg" // update path
                                         alt="Modules Design"
                                         width="30%"
                                     />
@@ -132,10 +152,10 @@ const HomeFirst = () => {
 
                     </Grid>
 
-                    <Grid item size={{ xs: 12, md: 5 }}>
+                    <Grid item size={{ xs: 12, md: 5 }} sx={{ py: 4 }}>
                         <Box p={4} sx={{ backgroundColor: '#0D1B2A', color: 'white', borderRadius: 2 }}>
                             <Box sx={{ display: "flex", gap: 1 }}>
-                                <img src={HomeFirstIcon} alt="" width={30} height={30} />
+                                <img src="./HomeFirstGetInTouch.svg" alt="" width={30} height={30} />
                                 <Typography variant="subtitle1" sx={{ fontWeight: 600, color: "#F28F53", fontSize: "18px" }}>
                                     GET IN TOUCH
                                 </Typography>
@@ -179,13 +199,7 @@ const HomeFirst = () => {
                     </Grid>
 
                 </Grid>
-            </Container>
-
-
-
-
-
-
+            </Container >
         </>
 
     );
