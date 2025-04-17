@@ -17,10 +17,10 @@ const About = () => {
 
 
         <div>
-            About 16/04/25
+            About 17/04/20
         </div>
 
-        <HomeThird />
+   
 
 
     )
