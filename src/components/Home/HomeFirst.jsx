@@ -185,11 +185,13 @@ const HomeFirst = () => {
                                     type="submit"
                                     fullWidth
                                     sx={{
-                                        mt: 3,
+                                        mt: 2,
+                                        py: 1,
                                         backgroundColor: '#E38C53',
                                         color: 'white',
                                         borderRadius: 0,
                                         '&:hover': { backgroundColor: '#d07c46' },
+                                        maxWidth: "150px"
                                     }}
                                 >
                                     SUBMIT NOW

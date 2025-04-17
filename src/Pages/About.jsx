@@ -3,6 +3,7 @@ import React from 'react'
 import SectionHeader from '../components/SectionHeader'
 import AboutUs from '../components/Home/AboutUs'
 import Community from '../components/community/Community'
+import GetInTouch from '../components/getInTouch/GetInTouch'
 
 const About = () => {
     return (
@@ -13,7 +14,11 @@ const About = () => {
             </SectionHeader>
             <AboutUs />
             <Community />
+            <GetInTouch />
         </>
+
+
+
 
 
         <div>
@@ -21,6 +26,7 @@ const About = () => {
         </div>
 
    
+
 
 
     )
