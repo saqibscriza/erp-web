@@ -29,14 +29,14 @@ const blogs = [
 
 const BlogSection = () => {
     return (
-        <Box px={22} py={4} sx={{ mb: 6 }}>
+        <Box sx={{ px: { xs: 6, sm: 20, md: 15, lg: 22 }, mb: 6, maxWidth: "1400px" }} py={4} >
             {/* Section Heading */}
             <Box textAlign="left" mb={4}>
 
                 <Button sx={{ backgroundColor: "#04857A", color: "white", maxWidth: "125px", height: "32px", mb: 2, borderRadius: "5px" }}>
                     BLOG POST
                 </Button>
-                <Typography sx={{ fontWeight: "700", fontSize: "45px", lineHeight: "58.5px", color: "#0E2A46" }}>
+                <Typography sx={{ fontWeight: "700", fontSize: { xs: "30px", sm: "28px" }, lineHeight: { xs: "45px", sm: "58px" }, color: "#0E2A46" }}>
                     Most Popular Post.
                 </Typography>
             </Box>
@@ -44,7 +44,7 @@ const BlogSection = () => {
             {/* Blog Cards */}
             <Grid container spacing={4} >
                 {blogs.map((item, index) => (
-                    <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+                    <Grid size={{ xs: 12, md: 6, lg: 4 }} key={index}>
                         <Card sx={{ p: 2, borderRadius: 3, bgcolor: "#F5F5F5" }}>
                             <CardMedia
                                 component="img"
@@ -88,7 +88,7 @@ const BlogSection = () => {
                                         '&:hover': {
                                             backgroundColor: '#346B65',
                                         },
-                                        width: { xs: '100%', md: 'auto' },
+                                        width: "auto",
                                         mt: 2
                                     }}
                                 >

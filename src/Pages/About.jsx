@@ -22,12 +22,10 @@ const About = () => {
         </>
 
 
-
-
-
         <div>
             About 29/04/25
         </div>
+
 
 
     )

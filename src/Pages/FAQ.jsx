@@ -14,7 +14,7 @@ import SectionHeader from '../components/SectionHeader'
 const faqData = [
     {
         question: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
+        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
         image: "/FaqImage.svg", // add your image path here
     },
     {
@@ -87,8 +87,10 @@ const FAQ = () => {
                             boxShadow: "none",
                             border: "1px solid #eee",
                             "&.Mui-expanded": {
-                                backgroundColor: "#31776A",
+                                backgroundColor: "#04857A",
                                 color: "#fff",
+                                fontWeight: 600,
+                                fontSize: "20px"
                             },
                         }}
                     >
@@ -96,7 +98,7 @@ const FAQ = () => {
                             expandIcon={<ExpandMoreIcon sx={{ color: expanded === index ? "#fff" : "#0A1F44" }} />}
                             sx={{
                                 fontWeight: 600,
-                                fontSize: "16px",
+                                fontSize: "20px",
                                 "& .MuiAccordionSummary-content": {
                                     my: 1,
                                 },
@@ -105,14 +107,14 @@ const FAQ = () => {
                             {item.question}
                         </AccordionSummary>
 
-                        <AccordionDetails sx={{ backgroundColor: "#fff", color: "#333" }}>
-                            <Grid container spacing={2}>
-                                <Grid item xs={12} md={8}>
-                                    <Typography variant="body2" sx={{ fontSize: "14px", lineHeight: 1.8 }}>
+                        <AccordionDetails sx={{ backgroundColor: "#fff", }}>
+                            <Grid container spacing={3}>
+                                <Grid item size={{ xs: 12, md: 8 }}>
+                                    <Typography variant="body2" sx={{ fontSize: "14px", lineHeight: 1.8, color: "#333931", fontSize: "17px", fontWeight: 400 }}>
                                         {item.answer}
                                     </Typography>
                                 </Grid>
-                                <Grid item xs={12} md={4}>
+                                <Grid item size={{ xs: 12, md: 4 }}>
                                     <Box
                                         component="img"
                                         src={item.image}
@@ -121,7 +123,7 @@ const FAQ = () => {
                                             width: "100%",
                                             borderRadius: 2,
                                             objectFit: "cover",
-                                            maxHeight: 160,
+                                            maxHeight: 300,
                                         }}
                                     />
                                 </Grid>
@@ -129,7 +131,7 @@ const FAQ = () => {
                         </AccordionDetails>
                     </Accordion>
                 ))}
-            </Box>
+            </Box >
         </>
     )
 }

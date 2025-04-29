@@ -1,15 +1,14 @@
 import { Box, Button, Container, Grid, TextField, Typography, Paper, IconButton, FormControl, OutlinedInput, InputLabel, MenuItem, Select, FormHelperText } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import HomeFirstLine from "../../assets/images/HomeFirstLine.png";
-import HomeFirst20Modules from "../../assets/images/HomeFirst20Modules.png";
-import HomeFirstIcon from "../../assets/images/HomeFirstIcon.png";
+import DemoModalForm from '../DemoModalForm';
+import { useState } from 'react';
 
 
 
-const HomeFirst = () => {
+const Welcome = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-
+    const [openDemoDialog, setOpenDemoDialog] = useState(false);
     const onSubmit = (data) => {
         console.log(data);
         reset();
@@ -21,7 +20,7 @@ const HomeFirst = () => {
                 maxWidth={false}
                 sx={{
                     position: 'relative',
-                    px: { xs: 12, sm: 20 },
+                    px: { xs: 2, sm: 10, md: 20 },
                     py: { xs: 12, sm: 4 },
                     '&::before': {
                         content: '""',
@@ -39,9 +38,9 @@ const HomeFirst = () => {
                         mt: 1
                     }
                 }}>
-                <Grid container spacing={4}>
-                    <Grid item size={{ xs: 12, md: 7 }} sx={{ py: 8 }}>
-                        <Typography sx={{ color: "#704FE6", fontSize: "17px", fontWeight: 400, mb: 1.5 }}>WELCOME EDU2ALL SCHOOL ERP</Typography>
+                <Grid container spacing={{ xs: 0, lg: 4 }}>
+                    <Grid size={{ xs: 12, lg: 7 }} sx={{ py: 8 }}>
+                        <Typography sx={{ color: "#704FE6", fontSize: { xs: "10px", sm: "17px" }, fontWeight: 400, mb: 1.5 }}>WELCOME EDU2ALL SCHOOL ERP</Typography>
                         <Typography
                             variant="h1"
                             sx={{
@@ -73,7 +72,7 @@ const HomeFirst = () => {
                         <Box
                             sx={{
                                 display: 'flex',
-                                flexDirection: { xs: 'column', md: 'row' },
+                                flexDirection: { xs: 'column', sm: 'row' },
                                 alignItems: 'center',
                                 justifyContent: 'space-between',
                                 gap: 4,
@@ -83,6 +82,7 @@ const HomeFirst = () => {
                             <Box sx={{ flexShrink: 0 }}>
                                 <Button
                                     variant="contained"
+                                    onClick={() => setOpenDemoDialog(true)}
                                     sx={{
                                         position: 'relative',
                                         display: 'flex',
@@ -131,18 +131,18 @@ const HomeFirst = () => {
 
                             {/* Right - Images */}
                             <Box>
-                                <Container sx={{ display: 'flex', gap: 2 }}>
+                                <Container sx={{ display: 'flex', justifyContent: "center", alignItems: "center", gap: 2 }}>
                                     <Box
                                         component="img"
                                         src="./HomeFirstLine.svg" // update path
                                         alt="Line Design"
-                                        width="20%"
+                                        width={{ xs: "30%", sm: "30%", md: "40%" }}
                                     />
                                     <Box
                                         component="img"
                                         src="./HomeFirst20+Modules.svg" // update path
                                         alt="Modules Design"
-                                        width="30%"
+                                        width={{ xs: "50%", sm: "80%", md: "60%" }}
                                     />
                                 </Container>
                             </Box>
@@ -152,7 +152,7 @@ const HomeFirst = () => {
 
                     </Grid>
 
-                    <Grid item size={{ xs: 12, md: 5 }} sx={{ py: 4 }}>
+                    <Grid size={{ xs: 12, lg: 5 }} sx={{ py: 4 }}>
                         <Box p={4} sx={{ backgroundColor: '#0D1B2A', color: 'white', borderRadius: 2 }}>
                             <Box sx={{ display: "flex", gap: 1 }}>
                                 <img src="./HomeFirstGetInTouch.svg" alt="" width={30} height={30} />
@@ -160,7 +160,7 @@ const HomeFirst = () => {
                                     GET IN TOUCH
                                 </Typography>
                             </Box>
-                            <Typography variant="h4" fontWeight={700} mt={1} mb={3}>
+                            <Typography sx={{ mb: 3, mt: 1, fontweight: 700, fontSize: { xs: "30px", sm: "40px" } }}>
                                 Book A Free Demo
                             </Typography>
 
@@ -201,11 +201,12 @@ const HomeFirst = () => {
                     </Grid>
 
                 </Grid>
+                <DemoModalForm open={openDemoDialog} onClose={() => setOpenDemoDialog(false)} />
             </Container >
         </>
 
     );
 };
 
-export default HomeFirst;
+export default Welcome;
 

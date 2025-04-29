@@ -1,10 +1,10 @@
 import { Box, Button, Grid, Typography, Stack, IconButton, Menu, MenuItem } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-
-import { Link, useLocation } from 'react-router-dom'; // <-- Import useLocation
-import NavLogo from "../../assets/images/NavLogo.png";
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from 'react-router-dom';
+import DemoModalForm from "../DemoModalForm";
 
 const navItems = [
     { name: 'Home', path: '/' },
@@ -16,8 +16,11 @@ const navItems = [
 
 
 const Navbar = () => {
+    const navigate = useNavigate();
+
     const location = useLocation();
     const [anchorEl, setAnchorEl] = useState(null);
+    const [openDemoDialog, setOpenDemoDialog] = useState(false);
 
     const open = Boolean(anchorEl);
 
@@ -27,6 +30,22 @@ const Navbar = () => {
 
     const handleMenuClose = () => {
         setAnchorEl(null);
+    };
+
+    const isActive = (path) => {
+        // Special case for home route
+        if (path === '/') {
+            return (
+                location.pathname === '/' ||
+                location.pathname.startsWith('/academics') ||
+                location.pathname.startsWith('/student') ||
+                location.pathname.startsWith('/transportation') ||
+                location.pathname.startsWith('/exam') ||
+                location.pathname.startsWith('/hr')
+            );
+
+        }
+        return location.pathname === path;
     };
 
     return (
@@ -91,7 +110,7 @@ const Navbar = () => {
                                 variant="body1"
                                 sx={{
                                     cursor: "pointer",
-                                    border: location.pathname === item.path ? "1px solid #3A7E76" : "none",
+                                    border: isActive(item.path) ? "1px solid #3A7E76" : "none",
                                     borderRadius: "20px",
                                     px: 2,
                                     py: 0.5,
@@ -110,8 +129,9 @@ const Navbar = () => {
 
             {/* Button */}
             <Box>
-                <Link to="/book-demo" style={{ textDecoration: "none" }}>
+                <Link style={{ textDecoration: "none" }}>
                     <Button
+                        onClick={() => setOpenDemoDialog(true)}
                         variant="contained"
                         sx={{
                             position: 'relative',
@@ -156,6 +176,9 @@ const Navbar = () => {
                     </Button>
                 </Link>
             </Box>
+
+
+            <DemoModalForm open={openDemoDialog} onClose={() => setOpenDemoDialog(false)} />
         </Box>
 
     );
