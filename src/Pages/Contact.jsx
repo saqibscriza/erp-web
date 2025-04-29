@@ -24,11 +24,9 @@ const Contact = () => {
             </SectionHeader>
 
             <Box sx={{
-                bgcolor: "white", py: 3, px: 18,
+                bgcolor: "white", py: 3, px: { xs: 4, md: 4, lg: 18 },
 
             }}>
-
-
 
                 <Box sx={{
                     px: { xs: 2, md: 5 }, py: 7, bgcolor: '#f4f4f4', position: 'relative', // Add relative positioning
@@ -37,12 +35,12 @@ const Contact = () => {
                     '&::before': {
                         content: '""',
                         position: 'absolute',
-                        bottom: 0,
+                        bottom: { xs: 750, sm: 750, md: 0 },
                         left: 0,
                         width: 0,
                         height: 0,
                         borderStyle: 'solid',
-                        borderWidth: '150px 150px 150px 150px', // Adjust size as needed
+                        borderWidth: { xs: '220px 220px 220px 220px', sm: '150px 150px 150px 150px' }, // Adjust size as needed
                         borderColor: 'transparent transparent #04857A #04857A', // Use your brand color
                         zIndex: -1,
                     }
@@ -92,7 +90,7 @@ const Contact = () => {
 
                             <Grid
                                 container
-                                spacing={{ xs: 2, md: 19 }}
+                                spacing={{ xs: 2 }}
                                 sx={{
                                     mt: 5,
                                     px: { xs: 2, sm: 0 },
@@ -102,11 +100,8 @@ const Contact = () => {
                                 {/* Customer Care - Will appear first on desktop, second on mobile */}
                                 <Grid
                                     item
-                                    xs={12}
-                                    sm={6}
-                                    md="auto"
+                                    size={{ xs: 12, sm: 6 }}
                                     sx={{
-                                        order: { xs: 2, sm: 1 },
                                         display: "flex",
                                         justifyContent: { xs: "center", sm: "flex-start" }
                                     }}
@@ -130,13 +125,11 @@ const Contact = () => {
                                 {/* Social Icons - Will appear second on desktop, first on mobile */}
                                 <Grid
                                     item
-                                    xs={12}
-                                    sm={6}
-                                    md={true} // Takes remaining space
+                                    size={{ xs: 12, sm: 6 }}
                                     sx={{
                                         order: { xs: 1, sm: 2 },
                                         display: "flex",
-                                        justifyContent: { xs: "center", sm: "flex-end" }
+                                        justifyContent: "flex-start"
                                     }}
                                 >
                                     <Box sx={{ display: "flex", gap: { xs: 2, sm: 0.1 } }}>
@@ -170,7 +163,7 @@ const Contact = () => {
                         </Grid>
 
                         {/* Right Form Section */}
-                        <Grid item size={{ xs: 12, md: 6 }}>
+                        <Grid item size={{ xs: 12, md: 6 }} sx={{ my: { xs: 2, sm: 0 } }}>
                             <Grid container spacing={2}>
                                 {/* Name Field */}
                                 <Grid item size={{ xs: 12 }}>
@@ -294,7 +287,7 @@ const Contact = () => {
                         </Grid>
                     </Grid>
                 </Box>
-            </Box>
+            </Box >
         </>
     )
 }

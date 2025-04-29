@@ -83,7 +83,7 @@ const Testimonials = () => {
             <SectionHeader title="TESTIMONIALS">
                 Home <span style={{ color: '#F15A29' }}> // </span> Testimonials
             </SectionHeader>
-            <Box sx={{ px: 20, py: 4 }}>
+            <Box sx={{ px: { xs: 8, sm: 5, lg: 20 }, py: 4 }}>
                 <Grid container spacing={3} >
                     {testimonials.map((t, idx) => (
                         <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={idx}>
@@ -103,16 +103,16 @@ const Testimonials = () => {
                                             <StarIcon key={i} fontSize="small" sx={{ color: '#f97316' }} />
                                         ))}
                                     </Box>
-                                    <Typography variant="body1" gutterBottom sx={{ fontStyle: 'italic' }}>
+                                    <Typography gutterBottom sx={{ fontSize: "17px", fontWeight: 400, color: "#333931" }}>
                                         {t.text}
                                     </Typography>
                                     <Box display="flex" alignItems="center" mt={2}>
                                         <Avatar src={t.avatar} alt={name} sx={{ mr: 2 }} />
                                         <Box>
-                                            <Typography variant="subtitle1" fontWeight={600}>
+                                            <Typography sx={{ color: "#0E2A46", fontSize: "17px", fontWeight: 700 }}>
                                                 {t.name}
                                             </Typography>
-                                            <Typography variant="body2" sx={{ color: '#6366f1' }}>
+                                            <Typography sx={{ fontSize: "13px", fontWeight: 400, color: '#704FE6' }}>
                                                 {t.role}
                                             </Typography>
                                         </Box>

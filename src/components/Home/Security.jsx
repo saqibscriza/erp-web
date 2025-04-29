@@ -1,18 +1,19 @@
 import { Box, Grid, Typography, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import Image1 from "../../assets/images/HomeSecond1.png"
-import Image2 from "../../assets/images/HomeSecond2.jpeg"
-import Image3 from "../../assets/images/HomeSecond3.png"
+
+import { useState } from 'react';
+import DemoModalForm from '../DemoModalForm';
 
 
 
 const Security = () => {
+    const [openDemoDialog, setOpenDemoDialog] = useState(false);
     return (
-        <Box px={{ xs: 2, md: 20 }} py={{ xs: 4, md: 0 }}>
+        <Box px={{ xs: 2, md: 20 }} py={{ xs: 0, sm: 10 }}>
             <Grid container spacing={4} alignItems="center">
 
                 {/* Left Section - Images */}
-                <Grid size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, lg: 6 }}>
                     <Box
                         sx={{
                             position: 'relative',
@@ -32,7 +33,7 @@ const Security = () => {
                                 position: 'absolute',
                                 top: 0,
                                 left: 0,
-                                width: { xs: '45%', md: '35%' },
+                                width: { xs: '30%', md: '30%' },
                                 borderRadius: 2,
                                 objectFit: 'cover',
                             }}
@@ -59,10 +60,10 @@ const Security = () => {
                             src="./SecurityImage2.svg"
                             sx={{
                                 position: 'absolute',
-                                top: 0,
-                                right: { xs: '25%', md: '25%' },
-                                width: 180,
-                                height: 180,
+                                top: { md: "50%", lg: 0 },
+                                right: { xs: '25%', md: "50%", lg: '25%' },
+                                width: { xs: 100, md: 200, lg: 180 },
+                                height: { xs: 100, md: 200, lg: 180 },
                                 border: '1px dashed #fb923c',
                                 display: 'flex',
                                 flexDirection: 'column',
@@ -90,13 +91,13 @@ const Security = () => {
                 </Grid>
 
                 {/* Right Section - Content */}
-                <Grid item size={{ xs: 12, md: 6, display: "flex", justifyContent: "flex-start", gap: 1, alignItems: "center" }}>
+                <Grid size={{ xs: 12, lg: 6 }}>
                     <Typography sx={{ color: "#F28F53", fontSize: "14px", fontWeight: 400, display: "flex", justifyContent: "flex-start", gap: 1, alignItems: "center" }} gutterBottom>
                         <img src="./SecurityIcon.svg" alt="" />
                         EDU2ALL SECURITY
                     </Typography>
 
-                    <Typography sx={{ color: "#0E2A46", fontSize: "45px", fontWeight: 700 }} >
+                    <Typography sx={{ color: "#0E2A46", fontSize: { xs: "35px", sm: "45px" }, fontWeight: 700 }} >
                         Why Choose Us?
                     </Typography>
 
@@ -105,7 +106,7 @@ const Security = () => {
                     </Typography>
 
                     <Grid container spacing={2} mb={3}>
-                        <Grid item size={{ xs: 12, md: 6 }}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Typography variant="subtitle1" fontWeight={700} color="#0D1B2A">
                                 Customer Centricity:
                             </Typography>
@@ -114,7 +115,7 @@ const Security = () => {
                             </Typography>
                         </Grid>
 
-                        <Grid item size={{ xs: 12, md: 6 }}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Typography variant="subtitle1" fontWeight={700} color="#0D1B2A">
                                 Product Usability:
                             </Typography>
@@ -133,6 +134,7 @@ const Security = () => {
 
                     <Button
                         variant="contained"
+                        onClick={() => setOpenDemoDialog(true)}
                         sx={{
                             position: 'relative',
                             display: 'flex',
@@ -148,7 +150,7 @@ const Security = () => {
                             '&:hover': {
                                 backgroundColor: '#346B65',
                             },
-                            width: { xs: '100%', md: 'auto' },
+                            width: "auto",
                         }}
                     >
                         <Typography variant="body1" sx={{ fontWeight: 400, fontSize: "15px", lineHeight: "58px" }}>
@@ -175,7 +177,7 @@ const Security = () => {
                         </Box>
                     </Button>
                 </Grid>
-
+                <DemoModalForm open={openDemoDialog} onClose={() => setOpenDemoDialog(false)} />
             </Grid>
         </Box >
     )

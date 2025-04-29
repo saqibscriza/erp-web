@@ -1,0 +1,117 @@
+// components/DemoRequestDialog.jsx
+
+import {
+    Dialog, DialogTitle, DialogContent, DialogActions,
+    Typography, IconButton, Button, TextField, MenuItem, Box,
+    OutlinedInput,
+    Select,
+    Backdrop
+} from "@mui/material";
+import { useForm } from "react-hook-form";
+import CloseIcon from "@mui/icons-material/Close";
+import { useState } from "react";
+
+const roles = ["Principal", "Teacher", "Admin", "Student", "Other"];
+
+const DemoModalForm = ({ open, onClose }) => {
+
+    const [success, setSuccess] = useState(false);
+
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+
+    const onSubmit = (data) => {
+        console.log("Form Submitted:", data);
+        setSuccess(true);
+        // API call or logic goes here
+    };
+
+    const handleClose = () => {
+        reset();
+        setSuccess(false);
+        onClose();
+    };
+
+    return (
+        <Dialog open={open} onClose={handleClose} maxWidth="xs" fullWidth>
+            <Box sx={{ position: "absolute", top: 8, right: 8 }}>
+                <IconButton onClick={handleClose}>
+                    <CloseIcon />
+                </IconButton>
+            </Box>
+            {/* <Backdrop
+                sx={{
+                    color: '#fff',
+                    zIndex: (theme) => theme.zIndex.drawer - 1,
+                    backdropFilter: 'blur(5px)',
+                }}
+                open={open}
+                onClick={handleClose}
+            /> */}
+
+            {!success ? (
+                <>
+                    <Box p={4} sx={{ backgroundColor: '#fff', color: 'white', borderRadius: 2, }}>
+                        <Box sx={{ display: "flex", gap: 1 }}>
+                            <img src="./HomeFirstGetInTouch.svg" alt="" width={30} height={30} />
+                            <Typography variant="subtitle1" sx={{ fontWeight: 600, color: "#F28F53", fontSize: "18px" }}>
+                                GET IN TOUCH
+                            </Typography>
+                        </Box>
+                        <Typography sx={{ mb: 3, mt: 1, fontweight: 700, fontSize: { xs: "30px", sm: "40px" }, color: "#04857A" }}>
+                            Book A Free Demo
+                        </Typography>
+
+                        <form onSubmit={handleSubmit(onSubmit)} noValidate>
+                            <OutlinedInput id="name" type="text" {...register("name", { required: 'This Field is required', validate: { startsWithCapital: (value) => /^[A-Z]/.test(value) || 'Name must start with an uppercase letter', minLength: (value) => value.length >= 4 || 'Minimum Length is 4', pattern: (value) => /^[A-Z][a-zA-Z\s]+$/.test(value) || 'Name must contain only letters, and spaces', } })} placeholder="Enter Name" fullWidth error={Boolean(errors.name)} sx={{ backgroundColor: 'white', mb: 1 }} />
+
+                            <OutlinedInput id="email" type="text" {...register("email", { required: 'This Field is required', validate: { pattern: (value) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) || 'Not a valid email format' } })} placeholder="Enter Email" fullWidth error={Boolean(errors.email)} sx={{ backgroundColor: 'white', mb: 1 }} />
+
+
+                            <OutlinedInput id="contactNo" type="text" {...register("contactNo", { required: 'This field is required', validate: { minLength: (value) => value.length <= 10 || 'Contact number must not be more than 10 digits', maxLength: (value) => value.length === 10 || 'Contact number must be exactly 10 digits', pattern: (value) => /^[6-9]\d{9}$/.test(value) || 'Contact number must contain only digits. Any characters or special characters are not allowed', } })} placeholder="Enter Contact No" fullWidth error={Boolean(errors.contactNo)} sx={{ backgroundColor: 'white', mb: 1 }} />
+
+                            <OutlinedInput id="schoolName" type="text" {...register("schoolName", { required: 'This Field is required', validate: { startsWithCapital: (value) => /^[A-Z]/.test(value) || 'Name must start with an uppercase letter', minLength: (value) => value.length >= 4 || 'Minimum Length is 4', pattern: (value) => /^[A-Z][a-zA-Z\s]+$/.test(value) || 'Name must contain only letters, and spaces', } })} placeholder="Enter School Name" fullWidth error={Boolean(errors.schoolName)} sx={{ backgroundColor: 'white', mb: 1 }} />
+
+                            <Select sx={{ backgroundColor: 'white', mb: 1 }} {...register("role", { required: 'This Field is required' })}
+                                fullWidth displayEmpty error={Boolean(errors.role)}
+                            >
+                                <MenuItem value='' disabled>Select Role</MenuItem>
+                                <MenuItem value={true}>Teacher</MenuItem>
+                                <MenuItem value={false}>Student</MenuItem>
+                            </Select>
+                            <Button
+                                type="submit"
+                                fullWidth
+                                sx={{
+                                    mt: 2,
+                                    py: 1,
+                                    backgroundColor: '#E38C53',
+                                    color: 'white',
+                                    borderRadius: 0,
+                                    '&:hover': { backgroundColor: '#d07c46' },
+                                    maxWidth: "150px"
+                                }}
+                            >
+                                SUBMIT NOW
+                            </Button>
+                        </form>
+                    </Box>
+                </>
+            ) : (
+                <DialogContent sx={{ textAlign: "center", py: 5 }}>
+                    <img src="./ModalThumbsUp.svg" alt="" />
+                    <Typography variant="h6" sx={{ fontWeight: 500 }}>
+                        You Have Been <strong>Successfully Registered</strong>
+                    </Typography>
+                    <Typography mt={1}>For the demo software. Our executive will contact you soon.</Typography>
+
+                    <Button variant="contained" sx={{ mt: 3, bgcolor: "#D38149" }} onClick={handleClose}>
+                        CONTINUE
+                    </Button>
+                </DialogContent>
+            )}
+        </Dialog>
+    );
+};
+
+export default DemoModalForm;

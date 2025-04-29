@@ -1,12 +1,16 @@
 import { Box, Grid, Typography, Button, Stack } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import DemoModalForm from '../DemoModalForm';
+import { useState } from 'react';
 
 const AboutUs = () => {
+    const [openDemoDialog, setOpenDemoDialog] = useState(false);
+
     return (
-        <Box sx={{ py: { xs: 8, md: 12 }, pl: { xs: 10, md: 20 }, pr: { xs: 10, md: 0 } }}>
+        <Box sx={{ py: { xs: 8, md: 12 }, pl: { xs: 5, md: 20 }, pr: { xs: 5, md: 20 } }}>
             <Grid container spacing={4} alignItems="center">
                 {/* Left Side - Images */}
-                <Grid item size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, lg: 6 }}>
 
                     <Box
                         sx={{
@@ -94,13 +98,13 @@ const AboutUs = () => {
                 </Grid>
 
                 {/* Right Side - Content */}
-                <Grid item size={{ xs: 12, md: 4 }}>
+                <Grid size={{ xs: 12, lg: 6 }}>
                     <Typography sx={{ color: "#F28F53", fontSize: "14px", fontWeight: 400, display: "flex", justifyContent: "flex-start", gap: 1, alignItems: "center" }} gutterBottom>
                         <img src="./SecurityIcon.svg" alt="" />
                         About Us
                     </Typography>
 
-                    <Typography sx={{ color: "#0E2A46", fontSize: "45px", fontWeight: 700, mb: 2 }} >
+                    <Typography sx={{ color: "#0E2A46", fontSize: { xs: "25px", sm: "30px", md: "45px" }, fontWeight: 700, mb: 2 }} >
                         We Build Software That Works Like The World Around You.
                     </Typography>
 
@@ -110,7 +114,7 @@ const AboutUs = () => {
                     </Typography>
 
                     <Grid container spacing={4} sx={{ mt: 2, mb: 2 }}>
-                        <Grid item size={{ xs: 12, md: 6 }}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Typography fontWeight={700} gutterBottom>
                                 Our Mission:
                             </Typography>
@@ -119,7 +123,7 @@ const AboutUs = () => {
                             </Typography>
                         </Grid>
 
-                        <Grid item size={{ xs: 12, md: 6 }}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <Typography fontWeight={700} gutterBottom>
                                 Our Vision:
                             </Typography>
@@ -131,6 +135,7 @@ const AboutUs = () => {
 
                     <Button
                         variant="contained"
+                        onClick={() => setOpenDemoDialog(true)}
                         sx={{
                             position: 'relative',
                             display: 'flex',
@@ -146,7 +151,7 @@ const AboutUs = () => {
                             '&:hover': {
                                 backgroundColor: '#346B65',
                             },
-                            width: { xs: '100%', md: 'auto' },
+                            width: "auto",
                         }}
                     >
                         <Typography variant="body1" sx={{ fontWeight: 400, fontSize: "15px", lineHeight: "58px" }}>
@@ -173,7 +178,9 @@ const AboutUs = () => {
                         </Box>
                     </Button>
                 </Grid>
+                <DemoModalForm open={openDemoDialog} onClose={() => setOpenDemoDialog(false)} />
             </Grid>
+
         </Box >
     );
 };
