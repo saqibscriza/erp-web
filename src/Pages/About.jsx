@@ -5,7 +5,7 @@ const About = () => {
     return (
 
         <div>
-            About 29/04/20
+            About 29/04/25
         </div>
 
     )
