@@ -20,32 +20,33 @@ const Header = () => {
 
                 <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-around", gap: 4, py: 1, flexDirection: { xs: "column", sm: "row" }, gap: { xs: 1, md: 2 } }}>
                     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                        <img src={Phone} alt="" />
+                        <img src="./HeaderPhone.svg" alt="" />
                         <Typography sx={{ color: "white", fontSize: "16px", fontWeight: 400 }} variant="body2">+91 911 601 1899</Typography>
                     </Box>
 
                     <Divider orientation="vertical" flexItem sx={{ borderColor: "rgba(255,255,255,0.3)" }} />
 
                     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                        <img src={Email} alt="" />
+                        <img src="./HeaderEmail.svg" alt="" />
                         <Typography sx={{ color: "white", fontSize: "16px", fontWeight: 400 }} variant="body2">sales@scriza.in</Typography>
                     </Box>
 
                     <Divider orientation="vertical" flexItem sx={{ borderColor: "rgba(255,255,255,0.3)" }} />
 
                     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                        <img src={Location} alt="" />
+                        <img src="./HeaderPhone.svg" alt="" />
                         <Typography sx={{ color: "white", fontSize: "16px", fontWeight: 400 }} variant="body2">A-4-5, A Block, Sector 16, Noida</Typography>
                     </Box>
 
                 </Box>
 
 
-                <Box sx={{ backgroundColor: "#E88C51", display: "flex", justifyContent: "center", alignItems: "center", height: "100%", gap: 1, p: .5 }}>
-                    <IconButton color="inherit"><FacebookIcon sx={{ fontSize: "15px" }} /></IconButton>
-                    <IconButton color="inherit"><InstagramIcon sx={{ fontSize: "15px" }} /></IconButton>
-                    <IconButton color="inherit"><LinkedInIcon sx={{ fontSize: "15px" }} /></IconButton>
-                    <IconButton color="inherit"><YouTubeIcon sx={{ fontSize: "15px" }} /></IconButton>
+                <Box sx={{ backgroundColor: "#E88C51", display: "flex", justifyContent: "center", alignItems: "center", height: "100%", gap: 2, p: 1.4 }}>
+                    <img src="./HeaderFb.svg" alt="" />
+                    <img src="./HeaderInsta.svg" alt="" />
+                    <img src="./HeaderLinkedIn.svg" alt="" />
+                    <img src="./HeaderYoutube.svg" alt="" />
+
                 </Box>
 
             </Box>

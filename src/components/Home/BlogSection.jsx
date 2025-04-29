@@ -2,9 +2,9 @@ import { Box, Typography, Grid, Button, Card, CardMedia, CardContent, Stack } fr
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import Image1 from "../../assets/images/HomeSecond1.png"
-import Image2 from "../../assets/images/HomeSecond2.jpeg"
-import Image3 from "../../assets/images/HomeSecond3.png"
+import Image1 from "/BlogImage1.svg"
+import Image2 from "/BlogImage2.svg"
+import Image3 from "/BlogImage3.svg"
 
 const blogs = [
     {
@@ -29,11 +29,11 @@ const blogs = [
 
 const BlogSection = () => {
     return (
-        <Box px={12} py={4} sx={{ mb: 8 }}>
+        <Box px={22} py={4} sx={{ mb: 6 }}>
             {/* Section Heading */}
             <Box textAlign="left" mb={4}>
 
-                <Button sx={{ backgroundColor: "#04857A", color: "white", width: "125px", height: "32px", mb: 2 }}>
+                <Button sx={{ backgroundColor: "#04857A", color: "white", maxWidth: "125px", height: "32px", mb: 2, borderRadius: "5px" }}>
                     BLOG POST
                 </Button>
                 <Typography sx={{ fontWeight: "700", fontSize: "45px", lineHeight: "58.5px", color: "#0E2A46" }}>
@@ -45,7 +45,7 @@ const BlogSection = () => {
             <Grid container spacing={4} >
                 {blogs.map((item, index) => (
                     <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-                        <Card sx={{ p: 2, borderRadius: 3, bgcolor: "lightGray" }}>
+                        <Card sx={{ p: 2, borderRadius: 3, bgcolor: "#F5F5F5" }}>
                             <CardMedia
                                 component="img"
                                 image={item.img}
@@ -57,16 +57,16 @@ const BlogSection = () => {
                                 <Stack direction="row" spacing={2} my={1} alignItems="center">
                                     <Stack direction="row" spacing={1} alignItems="center">
                                         <CalendarMonthIcon fontSize="small" color="success" />
-                                        <Typography variant="body2">{item.date}</Typography>
+                                        <Typography sx={{ color: "#4D5756" }} variant="body2">{item.date}</Typography>
                                     </Stack>
                                     <Stack direction="row" spacing={1} alignItems="center">
                                         <ChatBubbleOutlineIcon fontSize="small" color="success" />
-                                        <Typography variant="body2">Comment ({item.comment})</Typography>
+                                        <Typography sx={{ color: "#4D5756" }} variant="body2">Comment ({item.comment})</Typography>
                                     </Stack>
                                 </Stack>
 
                                 {/* Description */}
-                                <Typography variant="body1" fontWeight={600} color="#0A1D32" my={1} sx={{ mt: 2 }}>
+                                <Typography sx={{ color: "#0E2A46", fontSize: "19px", fontWeight: 600, mt: 2 }} my={1} >
                                     {item.desc}
                                 </Typography>
 

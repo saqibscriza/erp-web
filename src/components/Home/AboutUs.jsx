@@ -1,66 +1,102 @@
 import { Box, Grid, Typography, Button, Stack } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-const HomeThird = () => {
+const AboutUs = () => {
     return (
-        <Box sx={{ py: { xs: 8, md: 12 } }}>
+        <Box sx={{ py: { xs: 8, md: 12 }, pl: { xs: 10, md: 20 }, pr: { xs: 10, md: 0 } }}>
             <Grid container spacing={4} alignItems="center">
                 {/* Left Side - Images */}
                 <Grid item size={{ xs: 12, md: 6 }}>
-                    <Box position="relative" display="flex" flexWrap="wrap" gap={2}>
-                        {/* Image 1 */}
+
+                    <Box
+                        sx={{
+                            position: 'relative',
+                            width: '100%',
+                            maxWidth: 1000,
+                            height: { xs: 600, md: 650 },
+                            mx: 'auto',
+                            my: 8,
+                        }}
+                    >
+                        {/* Top Left Image */}
                         <Box
                             component="img"
-                            src="/images/image1.jpg"
-                            alt="Chart Analysis"
-                            sx={{ width: '45%', borderRadius: 2 }}
-                        />
-                        {/* Image 2 */}
-                        <Box
-                            component="img"
-                            src="/images/image2.jpg"
-                            alt="Team Discussion"
-                            sx={{ width: '45%', borderRadius: 2 }}
-                        />
-                        {/* Image 3 */}
-                        <Box
-                            component="img"
-                            src="/images/image3.jpg"
-                            alt="Man Working"
-                            sx={{ width: '100%', borderRadius: 2 }}
-                        />
-                        {/* Experience Badge */}
-                        <Box
-                            position="absolute"
-                            top="40%"
-                            left="40%"
+                            src="./AboutUsImage1.svg" // replace with actual image path
+                            alt="Top Left"
                             sx={{
-                                bgcolor: '#E49052',
-                                color: '#000',
-                                borderRadius: '50%',
-                                width: 140,
-                                height: 140,
+                                position: 'absolute',
+                                top: 80,
+                                left: 50,
+                                width: { xs: '45%', md: '35%' },
+                                borderRadius: 2,
+                                objectFit: 'cover',
+                            }}
+                        />
+
+                        {/* Top Right Image */}
+                        <Box
+                            component="img"
+                            src="./AboutUsImage2.svg"
+                            alt="Top Right"
+                            sx={{
+                                position: 'absolute',
+                                top: 140,
+                                right: 200,
+                                width: { xs: '45%', md: '20%' },
+                                borderRadius: 2,
+                                objectFit: 'cover',
+                            }}
+                        />
+
+
+
+                        {/* Bottom Image */}
+                        < Box
+                            component="img"
+                            src="./AboutUsImage3.svg"
+                            alt="Bottom Right"
+                            sx={{
+                                position: 'absolute',
+                                bottom: 50,
+                                right: 100,
+                                width: { xs: '45%', md: '65%' },
+                                borderRadius: 2,
+                                objectFit: 'cover',
+                            }}
+                        />
+
+                        {/* Center Circle Content */}
+                        <Box
+                            component="img"
+                            src="./AboutUsImage4.svg"
+                            sx={{
+                                position: 'absolute',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                width: { xs: 140, md: 180 },
+                                height: { xs: 140, md: 180 },
+
+
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'center',
                                 justifyContent: 'center',
+                                color: '#fff',
                                 textAlign: 'center',
-                                p: 2,
+                                px: 2,
+                                zIndex: 1
                             }}
                         >
-                            <Typography variant="h4" fontWeight={700}>
-                                5+
-                            </Typography>
-                            <Typography variant="body2">
-                                Years Of <br /> Experiences
-                            </Typography>
+
                         </Box>
                     </Box>
                 </Grid>
 
                 {/* Right Side - Content */}
-                <Grid item size={{ xs: 12, md: 6 }}>
-                    <Typography sx={{ color: "#F28F53", fontSize: "14px", fontWeight: 400 }} gutterBottom>
+                <Grid item size={{ xs: 12, md: 4 }}>
+                    <Typography sx={{ color: "#F28F53", fontSize: "14px", fontWeight: 400, display: "flex", justifyContent: "flex-start", gap: 1, alignItems: "center" }} gutterBottom>
+                        <img src="./SecurityIcon.svg" alt="" />
                         About Us
                     </Typography>
 
@@ -138,8 +174,8 @@ const HomeThird = () => {
                     </Button>
                 </Grid>
             </Grid>
-        </Box>
+        </Box >
     );
 };
 
-export default HomeThird;
+export default AboutUs;

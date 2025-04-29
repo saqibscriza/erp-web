@@ -26,7 +26,7 @@ const Footer = () => {
                                 borderBottom: { xs: '1px solid white', md: 'none' },
                                 p: 4
                             }}>
-                                <img src={Location} alt="" />
+                                <img src="./FooterLocation.svg" alt="" />
                                 <Box>
                                     <Typography sx={{ mb: 1 }}>Address:</Typography>
                                     <Typography>A-4-5, A Block, Sector 16, Noida</Typography>
@@ -41,7 +41,7 @@ const Footer = () => {
                                 borderBottom: { xs: '1px solid white', md: 'none' },
                                 p: 4.6
                             }}>
-                                <img src={Phone} alt="" />
+                                <img src="./FooterPhone.svg" alt="" />
                                 <Box>
                                     <Typography sx={{ mb: 1 }}>Phone:</Typography>
                                     <Typography>(+91)911-601 1899</Typography>
@@ -53,7 +53,7 @@ const Footer = () => {
 
                         <Grid item size={{ xs: 12, sm: 4 }}>
                             <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', p: 4 }}>
-                                <img src={Email} alt="" />
+                                <img src="./FooterEmail.svg" alt="" />
                                 <Box>
                                     <Typography sx={{ mb: 1 }}>Email:</Typography>
                                     <Typography>sales@scriza.in</Typography>
@@ -73,15 +73,16 @@ const Footer = () => {
                         {/* Logo & Social */}
                         <Grid size={{ xs: 12, md: 4 }}
                         >
-                            <img src={Logo} alt="" style={{ marginBottom: 16 }} />
+                            <img src="./FooterIcon.svg" alt="" style={{ marginBottom: 16 }} />
                             <Typography variant="body2" sx={{ mb: 2, color: "#ffffff", fontWeight: 400, fontSize: "17px" }}>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquam iusto, perspiciatis quis culpa.
                             </Typography>
                             <Box>
-                                <IconButton color="inherit"><Facebook /></IconButton>
-                                <IconButton color="inherit"><Instagram /></IconButton>
-                                <IconButton color="inherit"><Pinterest /></IconButton>
-                                <IconButton color="inherit"><Twitter /></IconButton>
+                                <img src="./FooterFb.svg" alt="" />
+                                <img src="./FooterInsta.svg" alt="" />
+                                <img src="./FooterPinterest.svg" alt="" />
+                                <img src="./FooterTwitter.svg" alt="" />
+
                             </Box>
                         </Grid>
 

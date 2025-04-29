@@ -7,115 +7,97 @@ import SchoolIcon from '@mui/icons-material/School';
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import EmailIcon from '@mui/icons-material/Email';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { useState } from "react";
+import CirclePattern from "../../components/CirclePattern";
 
-const features = [
+const modules = [
     {
-        title: "ASSIGNMENT AND NOTES",
-        description: "Teachers can utilize a mobile application to share assignments and notes, as well as review and assess student work.",
-        icon: <EventAvailableIcon />, // Replace with your icon
+        title: "Class And Section",
+        desc: "A dashboard showcasing various classes and sections enhances productivity while minimizing power consumption.",
+        imageSrc: "./Student/1.svg",
     },
     {
-        title: "EVENT MANAGEMENT",
-        description: "Effortlessly assign subjects to teachers based on class, with administrators easily managing class-specific subject lists.",
-        icon: <EventAvailableIcon />,
+        title: "Syllabus",
+        desc: "Access, upload, and download questions from the question bank effortlessly using our module.",
+        imageSrc: "./Student/2.svg",
     },
     {
-        title: "TASK MANAGEMENT",
-        description: "Instructors and principals can assign tasks to specific topics, prioritizing them based on importance.",
-        icon: <EventAvailableIcon />,
+        title: "Lesson Planning",
+        desc: "Our module generates subject-specific online exams and provides students with fast results.",
+        imageSrc: "./Student/3.svg",
     },
     {
-        title: "TIME TABLE",
-        description: "Our module makes it simple to create, update, and monitor subject timetables, meal timetables, and exam timetables.",
-        icon: <ScheduleIcon fontSize="large" />,
+        title: "Exam Timetable",
+        desc: "Teachers use a mobile app to record student attendance, and parents can view daily attendance reports.",
+        imageSrc: "./Student/4.svg",
     },
     {
-        title: "STORE MANAGEMENT",
-        description: "Our module is primarily utilized to track the tasks completed by both teachers and students.",
-        icon: <StoreIcon fontSize="large" />,
+        title: "Admission Management",
+        desc: "Efficiently handle student inquiries, streamline admission procedures, and register new students seamlessly.",
+        imageSrc: "./Student/5.svg",
     },
     {
-        title: "SCHOLARSHIP",
-        description: "Promotes academic excellence with learning resources and student sponsorships.",
-        icon: <SchoolIcon fontSize="large" />,
+        title: "Circular",
+        desc: "We'll keep parents informed with future updates through the Circular display on the mobile app, accompanied by notifications.",
+        imageSrc: "./Student/6.svg",
     },
     {
-        title: "STUDENT TRACKING",
-        description: "Teachers, parents, and administrators can all check the status of a student's ID card.",
-        icon: <TrackChangesIcon fontSize="large" />,
+        title: "Certificate",
+        desc: "Our system facilitates the management and generation of TC and CC for seamless certification processes.",
+        imageSrc: "./Student/7.svg",
     },
     {
-        title: "EMAIL & NOTIFICATION & CHAT",
-        description: "Our module provides email and notification tools to ensure smooth, seamless user communication.",
-        icon: <EmailIcon fontSize="large" />,
+        title: "Department",
+        desc: "Incorporate student performance in various reports, complete with signatures from teachers and the principal using our module.",
+        imageSrc: "./Student/8.svg",
     },
     {
-        title: "LEAVE MANAGEMENT",
-        description: "Our module efficiently handles half-time, sick, and casual leave, along with holiday management.",
-        icon: <LogoutIcon fontSize="large" />,
+        title: "Customizable Dashboard",
+        desc: "The dashboard provides a quick view of student and staff performance, with detailed data for deeper insights.",
+        imageSrc: "./Student/9.svg",
     },
-    // Add rest of the cards similarly...
 ];
 
+
 const HoverCard = styled(Paper)(({ theme }) => ({
-    padding: theme.spacing(3),
-    borderRadius: theme.spacing(2),
-    minHeight: "220px",
+    padding: theme.spacing(6),
+    borderRadius: theme.spacing(6),
+    minHeight: "250px",
     transition: "all 0.3s ease",
     cursor: "pointer",
     "&:hover": {
         backgroundColor: "#04857A",
         color: "#fff",
-        "& svg, & span": {
-            color: "#fff",
+        transform: "scale(1.05)",
+        "& .MuiTypography-root": {  // Target all Typography components
+            color: "#fff !important",
+        },
+        "& h3": {  // Specifically target the icon
+            color: "#fff !important",
         },
     },
 }));
 
 const StudentManagement = () => {
+    const [hoveredIndex, setHoveredIndex] = useState(null);
     return (
-        // <Box sx={{ px: { xs: 2, md: 8 }, py: 10 }}>
-        //     <Grid container spacing={3}>
-        //         {features.map((feature, index) => (
-        //             <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-        //                 <Paper
-        //                     elevation={3}
-        //                     sx={{
-        //                         p: 4,
-        //                         borderRadius: 3,
-        //                         height: "100%",
-        //                         transition: "0.3s",
-        //                         bgcolor: index === 1 ? "primary.main" : "background.paper",  // Highlight 2nd Card
-        //                         color: index === 1 ? "common.white" : "text.primary",
-        //                         "&:hover": {
-        //                             bgcolor: "primary.main",
-        //                             color: "common.white",
-        //                         },
-        //                         mb: 1
-        //                     }}
-        //                 >
-        //                     <Box sx={{ mb: 2, fontSize: 40 }}>{feature.icon}</Box>
-        //                     <Typography variant="h6" fontWeight={700} gutterBottom>
-        //                         {feature.title}
-        //                     </Typography>
-        //                     <Typography variant="body2">{feature.description}</Typography>
-        //                 </Paper>
-        //             </Grid>
-        //         ))}
-        //     </Grid>
-        // </Box>
+
         <Box sx={{ py: 5 }}>
             <Grid container spacing={3}>
-                {features.map((item, index) => (
+                {modules.map((item, index) => (
                     <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-                        <HoverCard elevation={2}>
+                        <HoverCard
+                            elevation={2}
+                            onMouseEnter={() => setHoveredIndex(index)}
+                            onMouseLeave={() => setHoveredIndex(null)}
+                        >
                             <Stack spacing={2}>
-                                <Typography variant="h3">{item.icon}</Typography>
-                                <Typography variant="h6" fontWeight="bold">
+                                <CirclePattern imageSrc={item.imageSrc} hovered={hoveredIndex === index} />
+                                <Typography sx={{ color: '#0E2A46', fontWeight: 700, fontSize: '20px' }}>
                                     {item.title}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {item.description}
+                                <Typography sx={{ color: '#4D5756', fontWeight: 400, fontSize: '16px' }}>
+                                    {item.desc}
                                 </Typography>
                             </Stack>
                         </HoverCard>

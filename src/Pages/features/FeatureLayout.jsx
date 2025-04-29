@@ -20,10 +20,16 @@ const FeatureLayout = () => {
 
 
     return (
-        <Box sx={{ p: 8, bgcolor: 'lightgray' }}>
+        <Box sx={{ py: 6, bgcolor: 'grey.50', px: 20 }}>
             {/* Heading */}
             <Box sx={{ py: 3, textAlign: "center" }}>
-                <Typography variant="h4" fontWeight="bold">
+                <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
+                    <img src="./SecurityIcon.svg" alt="" />
+                    <Typography sx={{ color: "#2FC7A1", fontSize: "14px", fontWeight: 400 }}>EDU2ALL FEATURE</Typography>
+                    <img src="./SecurityIcon.svg" alt="" />
+                </Box>
+
+                <Typography sx={{ color: "#0E2A46", fontSize: "45px", fontWeight: 700, px: 3, lineHeight: "60px" }}>
                     50+ Powerful Modules For Seamless School Management
                 </Typography>
             </Box>
@@ -33,6 +39,7 @@ const FeatureLayout = () => {
                 value={currentTab}
                 centered
                 TabIndicatorProps={{ style: { display: "none" } }} // Hide default underline
+
             >
                 {tabData.map((tab, index) => (
                     <Tab
@@ -41,24 +48,35 @@ const FeatureLayout = () => {
                         component={Link}
                         to={tab.path}
                         sx={{
+                            fontSize: "16px",
+                            fontWeight: 400,
                             textTransform: "none",
-                            fontWeight: "bold",
+                            textDecoration: "none",
                             backgroundColor: currentTab === index ? "#fff" : "transparent",
-                            borderBottom: currentTab === index ? "3px solid #FF9F43" : "3px solid transparent",
-                            color: currentTab === index ? "#000" : "inherit",
-                            borderRadius: "8px 8px 0 0",
+                            borderBottom: currentTab === index ? "2px solid #F28F53" : "1px solid lightgray",
+                            color: currentTab === index ? "#333931" : "#ADADBD",
+                            borderRadius: "4px 4px 0 0",
                             transition: "all 0.3s ease",
+                            '&.Mui-selected': {
+                                color: '#333931', // Active text color
+                            },
+
                         }}
                     />
                 ))}
             </Tabs>
 
             {/* Dynamic Content */}
-            <Box sx={{ py: 5 }}>
+            <Box sx={{ py: 2 }}>
                 <Outlet />
             </Box>
         </Box>
+
+
     );
 };
 
 export default FeatureLayout;
+
+
+
