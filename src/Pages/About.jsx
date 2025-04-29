@@ -1,9 +1,13 @@
 import React from 'react'
 
+// import HomeThird from '../components/Home/HomeThird'
+
+
 import SectionHeader from '../components/SectionHeader'
 import AboutUs from '../components/Home/AboutUs'
 import Community from '../components/community/Community'
 import GetInTouch from '../components/getInTouch/GetInTouch'
+
 
 const About = () => {
     return (
@@ -22,11 +26,8 @@ const About = () => {
 
 
         <div>
-            About 17/04/20
+            About 29/04/25
         </div>
-
-   
-
 
 
     )
