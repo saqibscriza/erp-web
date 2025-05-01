@@ -44,6 +44,7 @@ const GetInTouch = () => {
                     <Typography sx={{ mb: 1, color: "#F28F53", fontWeight: "600", fontSize: "23px" }}>
                         Join Now
                     </Typography>
+                
 
                     <Typography
 
