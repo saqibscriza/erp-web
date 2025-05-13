@@ -4,8 +4,6 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useState } from 'react';
 import DemoModalForm from '../DemoModalForm';
 
-
-
 const Security = () => {
     const [openDemoDialog, setOpenDemoDialog] = useState(false);
     return (
@@ -27,9 +25,10 @@ const Security = () => {
                         {/* Image 1 - Top Left */}
                         <Box
                             component="img"
-                            src="./SecurityImage1.svg" // replace with your actual image path
+                            src="./SecurityImage1.svg" 
                             alt="Student 1"
                             sx={{
+
                                 position: 'absolute',
                                 top: 0,
                                 left: 0,
@@ -54,7 +53,7 @@ const Security = () => {
                             }}
                         />
 
-                        {/* Image 3 - Top Right (Experience Card) */}
+                        {/* Image 3 - Top Right ( Experience Card ) */}
                         <Box
                             component="img"
                             src="./SecurityImage2.svg"
@@ -72,20 +71,22 @@ const Security = () => {
                                 boxShadow: 1,
                             }}
                         >
-
                         </Box>
 
                         {/* Decorative shape (Top left corner) */}
+
                         <Box
                             component="img"
                             src="./SecurityImage4.svg"
                             alt="Shape"
+
                             sx={{
                                 position: 'absolute',
                                 top: -30,
                                 left: -30,
                                 width: 50,
                             }}
+
                         />
                     </Box>
                 </Grid>
@@ -122,7 +123,7 @@ const Security = () => {
                             <Typography variant="body2" color="text.secondary">
                                 Edu2All’s intuitive interface ensures easy navigation, reducing training time and boosting adoption.
                             </Typography>
-                        </Grid>
+                        </Grid> 
                     </Grid>
 
                     <Typography variant="subtitle1" fontWeight={700} color="#0D1B2A">
@@ -140,7 +141,7 @@ const Security = () => {
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-between',
-                            backgroundColor: '#04857A', // Green part
+                            backgroundColor: '#04857A', 
                             borderRadius: '50px',
                             pr: 10,
                             pl: 4,
@@ -159,11 +160,11 @@ const Security = () => {
 
                         <Box
                             sx={{
-                                position: 'absolute',  // Absolute positioning
-                                right: 0,              // Stick to right
+                                position: 'absolute',  
+                                right: 0,              
                                 top: '50%',
                                 transform: 'translateY(-50%)',
-                                backgroundColor: '#E38A4A',  // Orange part
+                                backgroundColor: '#E38A4A',  
                                 borderRadius: '50%',
                                 width: 65,
                                 height: 65,

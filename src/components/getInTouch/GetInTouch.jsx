@@ -84,7 +84,7 @@ const GetInTouch = () => {
                             ml: { xs: 10, sm: 15, md: 0 },
                             width: 'auto',
                             // Better mobile behavior
-                            overflow: 'hidden', // Keeps the circle contained
+                            overflow: 'hidden',
                         }}
                     >
                         {/* Text - responsive font size and line height */}

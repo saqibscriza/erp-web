@@ -7,6 +7,7 @@ import axios from 'axios';
 
 
 const Welcome = () => {
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm({ mode: 'onChange' });
     const [openDemoDialog, setOpenDemoDialog] = useState(false);
     const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: '' });
@@ -41,6 +42,15 @@ const Welcome = () => {
         } catch (error) {
             console.error("Error submitting form:", error.response?.data || error.message);
         }
+
+
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const [openDemoDialog, setOpenDemoDialog] = useState(false);
+    
+    const onSubmit = (data) => {
+        console.log(data);
+        reset();
+
     };
 
 
@@ -59,11 +69,11 @@ const Welcome = () => {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        backgroundImage: 'url(/HomeFirstBG.svg)', // Update with your image path
+                        backgroundImage: 'url(/HomeFirstBG.svg)', 
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
-                        opacity: 0.1, // Adjust opacity as needed (0.1 = 10% visible)
+                        opacity: 0.1, 
                         zIndex: 0,
                         mt: 1
                     }
@@ -97,7 +107,6 @@ const Welcome = () => {
                             All-in-one <b style={{ color: "", fontSize: "15px", fontWeight: 700 }}>school management software</b> with <b>20+ modules</b> to automate
                             administration, enhance learning, and improve efficiency for educational institutions.
                         </Typography>
-
 
                         <Box
                             sx={{
@@ -204,6 +213,7 @@ const Welcome = () => {
                                 )}
 
                                 <OutlinedInput id="email" type="email" {...register("email", { required: 'This Field is required', validate: { pattern: (value) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) || 'Not a valid email format' } })} placeholder="Enter Email" fullWidth error={Boolean(errors.email)} sx={{ backgroundColor: 'white', mb: 1 }} />
+
 
                                 {errors.email && (
                                     <Typography sx={{ mb: 2 }} variant="caption" color="error">

@@ -6,9 +6,11 @@ import Footer from './components/footer/Footer';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import FeatureManagement from './Pages/features/FeatureManagement';
-import FAQ from './Pages/FAQ';
+import FAQ from './karanComponent/FaQKa';
 import Testimonials from './Pages/Testimonials';
-import Contact from './Pages/Contact';
+// import Contact from './Pages/Contact';
+import Contact from './karanComponent/ContactUsKa';
+
 import FeatureLayout from './Pages/features/FeatureLayout';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -61,6 +63,7 @@ function App() {
           <Route path='/faq' element={<FAQ />} />
           <Route path='/testimonials' element={<Testimonials />} />
           <Route path='/contact' element={<Contact />} />
+          {/* <Route path='/contact' element={<Contact />} /> */}
 
 
           {/* Catch-all route for unknown feature types */}
