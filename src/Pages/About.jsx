@@ -1,8 +1,6 @@
 import React from 'react'
 
 // import HomeThird from '../components/Home/HomeThird'
-
-
 import SectionHeader from '../components/SectionHeader'
 import AboutUs from '../components/Home/AboutUs'
 import Community from '../components/community/Community'

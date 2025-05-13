@@ -7,8 +7,10 @@ import { useState } from 'react';
 
 
 const Welcome = () => {
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [openDemoDialog, setOpenDemoDialog] = useState(false);
+    
     const onSubmit = (data) => {
         console.log(data);
         reset();
@@ -29,11 +31,11 @@ const Welcome = () => {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        backgroundImage: 'url(/HomeFirstBG.svg)', // Update with your image path
+                        backgroundImage: 'url(/HomeFirstBG.svg)', 
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
-                        opacity: 0.1, // Adjust opacity as needed (0.1 = 10% visible)
+                        opacity: 0.1, 
                         zIndex: 0,
                         mt: 1
                     }
@@ -67,7 +69,6 @@ const Welcome = () => {
                             All-in-one <b style={{ color: "", fontSize: "15px", fontWeight: 700 }}>school management software</b> with <b>20+ modules</b> to automate
                             administration, enhance learning, and improve efficiency for educational institutions.
                         </Typography>
-
 
                         <Box
                             sx={{
@@ -147,9 +148,6 @@ const Welcome = () => {
                                 </Container>
                             </Box>
                         </Box>
-
-
-
                     </Grid>
 
                     <Grid size={{ xs: 12, lg: 5 }} sx={{ py: 4 }}>
@@ -168,7 +166,6 @@ const Welcome = () => {
                                 <OutlinedInput id="name" type="text" {...register("name", { required: 'This Field is required', validate: { startsWithCapital: (value) => /^[A-Z]/.test(value) || 'Name must start with an uppercase letter', minLength: (value) => value.length >= 4 || 'Minimum Length is 4', pattern: (value) => /^[A-Z][a-zA-Z\s]+$/.test(value) || 'Name must contain only letters, and spaces', } })} placeholder="Enter Name" fullWidth error={Boolean(errors.name)} sx={{ backgroundColor: 'white', mb: 1 }} />
 
                                 <OutlinedInput id="email" type="text" {...register("email", { required: 'This Field is required', validate: { pattern: (value) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) || 'Not a valid email format' } })} placeholder="Enter Email" fullWidth error={Boolean(errors.email)} sx={{ backgroundColor: 'white', mb: 1 }} />
-
 
                                 <OutlinedInput id="contactNo" type="text" {...register("contactNo", { required: 'This field is required', validate: { minLength: (value) => value.length <= 10 || 'Contact number must not be more than 10 digits', maxLength: (value) => value.length === 10 || 'Contact number must be exactly 10 digits', pattern: (value) => /^[6-9]\d{9}$/.test(value) || 'Contact number must contain only digits. Any characters or special characters are not allowed', } })} placeholder="Enter Contact No" fullWidth error={Boolean(errors.contactNo)} sx={{ backgroundColor: 'white', mb: 1 }} />
 
