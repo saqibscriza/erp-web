@@ -196,6 +196,7 @@ const Welcome = () => {
                             </Typography>
 
                             <form onSubmit={handleSubmit(onSubmit()} noValidate>
+
                                 <OutlinedInput id="name" type="text" {...register("name", {
                                     required: 'This Field is required', validate: {
                                         minLength: (value) => value.length >= 4 || 'Minimum Length is 4', pattern: (value) => /^[a-zA-Z\s]+$/.test(value) || 'Name must contain only letters, and spaces',
