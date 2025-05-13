@@ -121,8 +121,6 @@ const DemoModalForm = ({ open, onClose }) => {
                                         {errors.schoolName.message}
                                     </Typography>
                                 )}
-
-
                                 <Button
                                     type="submit"
                                     fullWidth
