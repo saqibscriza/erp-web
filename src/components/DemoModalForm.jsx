@@ -41,7 +41,8 @@ const DemoModalForm = ({ open, onClose }) => {
             formData.append('email', data.email);
 
 
-            const response = await axios.post("http://89.116.122.211:5000/request/create", formData, {
+            const response = await axios.post("https://www.auth.edu2all.in/sch/request/create", formData, {
+            // const response = await axios.post("http://89.116.122.211:5000/request/create", formData, {
                 headers: {
                     // "Content-Type": "multipart/form-data"
                 }
@@ -98,7 +99,6 @@ const DemoModalForm = ({ open, onClose }) => {
                                         {errors.name.message}
                                     </Typography>
                                 )}
-
 
                                 <OutlinedInput id="email" type="text" {...register("email", { required: 'This Field is required', validate: { pattern: (value) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) || 'Not a valid email format' } })} placeholder="Enter Email" fullWidth error={Boolean(errors.email)} sx={{ backgroundColor: 'white', mb: 1 }} />
                                 {errors.email && (
