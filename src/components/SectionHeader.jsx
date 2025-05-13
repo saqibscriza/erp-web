@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
-
+import menuImage from "../assets/menuImageKa.jpeg";
 const SectionHeader = ({ title, children }) => {
     return (
         <Box
@@ -9,8 +9,10 @@ const SectionHeader = ({ title, children }) => {
                 width: '100%',
                 py: { xs: 6, sm: 10 },
                 textAlign: 'center',
-                background: 'linear-gradient(90deg, #f3e9e9 0%, #e6ecf9 100%)',
+                // background: 'linear-gradient(90deg, #f3e9e9 0%, #e6ecf9 100%)',
                 overflow: 'hidden',
+                height: "365px",
+                backgroundImage: `url(${menuImage})`
             }}
         >
             {/* Decorative SVGs */}
