@@ -24,7 +24,7 @@ const Welcome = () => {
             formData.append('schoolName', data.schoolName);
             formData.append('email', data.email);
 
-            const response = await axios.post("http://89.116.122.211:5000/request/create", formData,);
+            const response = await axios.post("https://www.auth.edu2all.in/sch/request/create", formData,);
 
             console.log("Registeration Successfully done", response);
             if (response?.data?.status === 'success') {
