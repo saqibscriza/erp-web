@@ -42,16 +42,11 @@ const Welcome = () => {
         } catch (error) {
             console.error("Error submitting form:", error.response?.data || error.message);
         }
+    }
 
 
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const [openDemoDialog, setOpenDemoDialog] = useState(false);
-    
-    const onSubmit = (data) => {
-        console.log(data);
-        reset();
 
-    };
+
 
 
     return (
@@ -69,11 +64,11 @@ const Welcome = () => {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        backgroundImage: 'url(/HomeFirstBG.svg)', 
+                        backgroundImage: 'url(/HomeFirstBG.svg)',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
-                        opacity: 0.1, 
+                        opacity: 0.1,
                         zIndex: 0,
                         mt: 1
                     }
@@ -274,4 +269,3 @@ const Welcome = () => {
 };
 
 export default Welcome;
-
