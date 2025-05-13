@@ -3,6 +3,7 @@ import SectionHeader from '../components/SectionHeader'
 import { Grid, Card, CardContent, Typography, Avatar, Box } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import GetInTouch from '../components/getInTouch/GetInTouch';
+import MenuPage from '../karanComponent/MenuPageKa';
 
 const testimonials = [
     {
@@ -81,9 +82,11 @@ const testimonials = [
 const Testimonials = () => {
     return (
         <>
-            <SectionHeader title="TESTIMONIALS">
+            <MenuPage title="TESTIMONIALS" subtitle="Home" />
+
+            {/* <SectionHeader title="TESTIMONIALS">
                 Home <span style={{ color: '#F15A29' }}> // </span> Testimonials
-            </SectionHeader>
+            </SectionHeader> */}
             <Box sx={{ px: { xs: 8, sm: 5, lg: 20 }, py: 4 }}>
                 <Grid container spacing={3} >
                     {testimonials.map((t, idx) => (
