@@ -41,7 +41,8 @@ const DemoModalForm = ({ open, onClose }) => {
             formData.append('email', data.email);
 
 
-            const response = await axios.post("http://89.116.122.211:5000/request/create", formData, {
+            const response = await axios.post("https://www.auth.edu2all.in/sch/request/create", formData, {
+            // const response = await axios.post("http://89.116.122.211:5000/request/create", formData, {
                 headers: {
                     // "Content-Type": "multipart/form-data"
                 }
@@ -91,14 +92,13 @@ const DemoModalForm = ({ open, onClose }) => {
                                 Book A Free Demo
                             </Typography>
 
-                            <form onSubmit={handleSubmit(onSubmit)} noValidate>
+                            <form onSubmit={handleSubmit(onSubmit())} noValidate>
                                 <OutlinedInput id="name" type="text" {...register("name", { required: 'This Field is required', validate: { minLength: (value) => value.length >= 4 || 'Minimum Length is 4', pattern: (value) => /^[a-zA-Z\s]+$/.test(value) || 'Name must contain only letters, and spaces', } })} placeholder="Enter Name" fullWidth error={Boolean(errors.name)} sx={{ backgroundColor: 'white', mb: 1 }} />
                                 {errors.name && (
                                     <Typography sx={{ mb: 2 }} variant="caption" color="error">
                                         {errors.name.message}
                                     </Typography>
                                 )}
-
 
                                 <OutlinedInput id="email" type="text" {...register("email", { required: 'This Field is required', validate: { pattern: (value) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) || 'Not a valid email format' } })} placeholder="Enter Email" fullWidth error={Boolean(errors.email)} sx={{ backgroundColor: 'white', mb: 1 }} />
                                 {errors.email && (
