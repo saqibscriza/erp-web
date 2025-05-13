@@ -17,18 +17,14 @@ const Welcome = () => {
 
     const onSubmit = async (data) => {
         try {
-            console.log("try")
+            // console.log("try")
             const formData = new FormData();
             formData.append('name', data.name);
             formData.append('contactNo', data.contactNo);
             formData.append('schoolName', data.schoolName);
             formData.append('email', data.email);
 
-            const response = await axios.post("http://89.116.122.211:5000/request/create", formData, {
-                headers: {
-                    // "Content-Type": "application/json",
-                },
-            });
+            const response = await axios.post("http://89.116.122.211:5000/request/create", formData,);
 
             console.log("Registeration Successfully done", response);
             if (response?.data?.status === 'success') {
@@ -195,7 +191,7 @@ const Welcome = () => {
                                 Book A Free Demo
                             </Typography>
 
-                            <form onSubmit={handleSubmit(onSubmit()} noValidate>
+                            <form onSubmit={handleSubmit(onSubmit)} noValidate>
 
                                 <OutlinedInput id="name" type="text" {...register("name", {
                                     required: 'This Field is required', validate: {
