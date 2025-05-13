@@ -120,12 +120,13 @@ const Navbar = () => {
                             >
                                 {item.name}
                             </Typography>
+                            <Typography>
+                                
+                            </Typography>
                         </Link>
                     ))}
                 </Stack>
             </Box>
-
-
 
             {/* Button */}
             <Box>
@@ -176,8 +177,6 @@ const Navbar = () => {
                     </Button>
                 </Link>
             </Box>
-
-
             <DemoModalForm open={openDemoDialog} onClose={() => setOpenDemoDialog(false)} />
         </Box>
 
