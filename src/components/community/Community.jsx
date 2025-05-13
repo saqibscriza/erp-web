@@ -205,14 +205,12 @@ const Community = () => {
 
             {/* White Testimonial Section */}
             <Box sx={{ pt: 3, textAlign: "center" }}>
-
                 <Button sx={{ bgcolor: "#C6EBE8", color: "#04857A", mb: 3, fontWeight: 400, fontSize: "14px" }}>
                     TESTIMONIAL
                 </Button>
                 <Typography sx={{ fontWeight: 700, mb: 5, color: "#0E2A46", fontWeight: 700, fontSize: { xs: "35px", sm: "45px" }, lineHeight: { xs: "45px", sm: "58px" } }}>
                     Creating A Community Of <br /> Life Long Learners.
                 </Typography>
-
 
                 <Box sx={{ px: { xs: 0, md: 12 }, py: 5, }}>
                     <Slider {...settings}>

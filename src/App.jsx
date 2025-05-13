@@ -12,12 +12,44 @@ import Testimonials from './Pages/Testimonials';
 import Contact from './karanComponent/ContactUsKa';
 
 import FeatureLayout from './Pages/features/FeatureLayout';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+const tabData = [
+  { label: "Academics", path: "academics" },
+  { label: "Student", path: "student" },
+  { label: "Transportation", path: "transportation" },
+  { label: "Exam", path: "exam" },
+  { label: "HR", path: "hr" },
+];
+
+function ScrollToTop() {
+  const { pathname, key } = useLocation();
+
+  useEffect(() => {
+    // Check if the path is changing between tabs
+    const isTabNavigation = tabData.some(tab =>
+      pathname.startsWith(`/${tab.path}`) ||
+      pathname.includes(`/${tab.path}/`) ||
+      pathname === `/${tab.path}`
+    );
+
+    // Only scroll to top if not a tab navigation
+    if (!isTabNavigation) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, key]);
+
+  return null;
+}
 
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         <Navbar />
         <Routes>

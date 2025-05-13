@@ -2,6 +2,7 @@ import React from 'react'
 import SectionHeader from '../components/SectionHeader'
 import { Grid, Card, CardContent, Typography, Avatar, Box } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
+import GetInTouch from '../components/getInTouch/GetInTouch';
 
 const testimonials = [
     {
@@ -123,6 +124,7 @@ const Testimonials = () => {
                     ))}
                 </Grid>
             </Box>
+            <GetInTouch />
 
         </>
     )
