@@ -21,6 +21,7 @@ const FeatureLayout = () => {
     const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
     const [anchorEl, setAnchorEl] = useState(null);
 
+
     // Extract the current feature type from the URL
     const currentPath = location.pathname.split('/').filter(Boolean).pop() || 'academics';
     const currentTab = tabData.findIndex(tab => tab.path === currentPath);
@@ -146,6 +147,7 @@ const FeatureLayout = () => {
             <Box sx={{ py: 2 }}>
                 <Outlet />
             </Box>
+
         </Box>
     );
 };

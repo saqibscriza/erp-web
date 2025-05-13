@@ -21,7 +21,6 @@ const CirclePattern = ({ imageSrc, hovered }) => {
                     zIndex: 1,
                 }}
             />
-
             {/* Overlay pattern image */}
             <Box
                 component="img"

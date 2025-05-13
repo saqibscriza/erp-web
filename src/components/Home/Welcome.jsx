@@ -1,18 +1,48 @@
-import { Box, Button, Container, Grid, TextField, Typography, Paper, IconButton, FormControl, OutlinedInput, InputLabel, MenuItem, Select, FormHelperText } from '@mui/material';
+import { Box, Button, Container, Grid, TextField, Typography, Paper, IconButton, FormControl, OutlinedInput, InputLabel, MenuItem, Select, FormHelperText, Snackbar, Alert } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import DemoModalForm from '../DemoModalForm';
 import { useState } from 'react';
-
+import axios from 'axios';
 
 
 const Welcome = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm({ mode: 'onChange' });
     const [openDemoDialog, setOpenDemoDialog] = useState(false);
-    const onSubmit = (data) => {
-        console.log(data);
-        reset();
+    const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: '' });
+    const handleCloseSnackbar = () => {
+        setSnackbar((prev) => ({ ...prev, open: false }));
     };
+
+    const onSubmit = async (data) => {
+        try {
+            console.log("try")
+            const formData = new FormData();
+            formData.append('name', data.name);
+            formData.append('contactNo', data.contactNo);
+            formData.append('schoolName', data.schoolName);
+            formData.append('email', data.email);
+
+            const response = await axios.post("http://89.116.122.211:5000/request/create", formData, {
+                headers: {
+                    // "Content-Type": "application/json",
+                },
+            });
+
+            console.log("Registeration Successfully done", response);
+            if (response?.data?.status === 'success') {
+                setSnackbar({ open: true, message: response.data.message, severity: 'success' });
+                setTimeout(() => {
+                    reset();
+                }, 2000);
+            } else {
+                setSnackbar({ open: true, message: response?.data?.message || 'Error occurred', severity: 'error' });
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error.response?.data || error.message);
+        }
+    };
+
 
     return (
         <>
@@ -147,9 +177,6 @@ const Welcome = () => {
                                 </Container>
                             </Box>
                         </Box>
-
-
-
                     </Grid>
 
                     <Grid size={{ xs: 12, lg: 5 }} sx={{ py: 4 }}>
@@ -165,22 +192,39 @@ const Welcome = () => {
                             </Typography>
 
                             <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                                <OutlinedInput id="name" type="text" {...register("name", { required: 'This Field is required', validate: { startsWithCapital: (value) => /^[A-Z]/.test(value) || 'Name must start with an uppercase letter', minLength: (value) => value.length >= 4 || 'Minimum Length is 4', pattern: (value) => /^[A-Z][a-zA-Z\s]+$/.test(value) || 'Name must contain only letters, and spaces', } })} placeholder="Enter Name" fullWidth error={Boolean(errors.name)} sx={{ backgroundColor: 'white', mb: 1 }} />
+                                <OutlinedInput id="name" type="text" {...register("name", {
+                                    required: 'This Field is required', validate: {
+                                        minLength: (value) => value.length >= 4 || 'Minimum Length is 4', pattern: (value) => /^[a-zA-Z\s]+$/.test(value) || 'Name must contain only letters, and spaces',
+                                    }
+                                })} placeholder="Enter Name" fullWidth error={Boolean(errors.name)} sx={{ backgroundColor: 'white', mb: 1 }} />
+                                {errors.name && (
+                                    <Typography sx={{ mb: 2 }} variant="caption" color="error">
+                                        {errors.name.message}
+                                    </Typography>
+                                )}
 
-                                <OutlinedInput id="email" type="text" {...register("email", { required: 'This Field is required', validate: { pattern: (value) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) || 'Not a valid email format' } })} placeholder="Enter Email" fullWidth error={Boolean(errors.email)} sx={{ backgroundColor: 'white', mb: 1 }} />
+                                <OutlinedInput id="email" type="email" {...register("email", { required: 'This Field is required', validate: { pattern: (value) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) || 'Not a valid email format' } })} placeholder="Enter Email" fullWidth error={Boolean(errors.email)} sx={{ backgroundColor: 'white', mb: 1 }} />
 
+                                {errors.email && (
+                                    <Typography sx={{ mb: 2 }} variant="caption" color="error">
+                                        {errors.email.message}
+                                    </Typography>
+                                )}
 
                                 <OutlinedInput id="contactNo" type="text" {...register("contactNo", { required: 'This field is required', validate: { minLength: (value) => value.length <= 10 || 'Contact number must not be more than 10 digits', maxLength: (value) => value.length === 10 || 'Contact number must be exactly 10 digits', pattern: (value) => /^[6-9]\d{9}$/.test(value) || 'Contact number must contain only digits. Any characters or special characters are not allowed', } })} placeholder="Enter Contact No" fullWidth error={Boolean(errors.contactNo)} sx={{ backgroundColor: 'white', mb: 1 }} />
+                                {errors.contactNo && (
+                                    <Typography sx={{ mb: 2 }} variant="caption" color="error">
+                                        {errors.contactNo.message}
+                                    </Typography>
+                                )}
 
-                                <OutlinedInput id="schoolName" type="text" {...register("schoolName", { required: 'This Field is required', validate: { startsWithCapital: (value) => /^[A-Z]/.test(value) || 'Name must start with an uppercase letter', minLength: (value) => value.length >= 4 || 'Minimum Length is 4', pattern: (value) => /^[A-Z][a-zA-Z\s]+$/.test(value) || 'Name must contain only letters, and spaces', } })} placeholder="Enter School Name" fullWidth error={Boolean(errors.schoolName)} sx={{ backgroundColor: 'white', mb: 1 }} />
+                                <OutlinedInput id="schoolName" type="text" {...register("schoolName", { required: 'This Field is required', validate: { minLength: (value) => value.length >= 4 || 'Minimum Length is 4', pattern: (value) => /^[a-zA-Z\s]+$/.test(value) || 'Name must contain only letters, and spaces', } })} placeholder="Enter School Name" fullWidth error={Boolean(errors.schoolName)} sx={{ backgroundColor: 'white', mb: 1 }} />
+                                {errors.schoolName && (
+                                    <Typography sx={{ mb: 2 }} variant="caption" color="error">
+                                        {errors.schoolName.message}
+                                    </Typography>
+                                )}
 
-                                <Select sx={{ backgroundColor: 'white', mb: 1 }} {...register("role", { required: 'This Field is required' })}
-                                    fullWidth displayEmpty error={Boolean(errors.role)}
-                                >
-                                    <MenuItem value='' disabled>Select Role</MenuItem>
-                                    <MenuItem value={true}>Teacher</MenuItem>
-                                    <MenuItem value={false}>Student</MenuItem>
-                                </Select>
                                 <Button
                                     type="submit"
                                     fullWidth
@@ -197,10 +241,21 @@ const Welcome = () => {
                                     SUBMIT NOW
                                 </Button>
                             </form>
+
                         </Box>
                     </Grid>
 
                 </Grid>
+                <Snackbar
+                    open={snackbar.open}
+                    autoHideDuration={4000}
+                    onClose={handleCloseSnackbar}
+                    anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                >
+                    <Alert onClose={handleCloseSnackbar} variant="filled" severity={snackbar.severity} sx={{ width: '100%', color: '#fff' }}>
+                        {snackbar.message}
+                    </Alert>
+                </Snackbar>
                 <DemoModalForm open={openDemoDialog} onClose={() => setOpenDemoDialog(false)} />
             </Container >
         </>

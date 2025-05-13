@@ -15,6 +15,7 @@ import {
     AccessTime,
     Phone,
 } from '@mui/icons-material';
+import GetInTouch from '../components/getInTouch/GetInTouch';
 
 const Contact = () => {
     return (
@@ -25,9 +26,7 @@ const Contact = () => {
 
             <Box sx={{
                 bgcolor: "white", py: 3, px: { xs: 4, md: 4, lg: 18 },
-
             }}>
-
                 <Box sx={{
                     px: { xs: 2, md: 5 }, py: 7, bgcolor: '#f4f4f4', position: 'relative', // Add relative positioning
                     overflow: 'hidden', // Ensure the triangle stays contained
@@ -159,7 +158,6 @@ const Contact = () => {
                                 </Grid>
                             </Grid>
 
-
                         </Grid>
 
                         {/* Right Form Section */}
@@ -167,7 +165,6 @@ const Contact = () => {
                             <Grid container spacing={2}>
                                 {/* Name Field */}
                                 <Grid item size={{ xs: 12 }}>
-
                                     <InputLabel sx={{ color: "#0E2A46", fontWeight: 400, fontSize: "18px", mb: 1 }}>Name*</InputLabel>
                                     <OutlinedInput sx={{
                                         backgroundColor: "white",
@@ -181,7 +178,6 @@ const Contact = () => {
                                             border: "none" // Removes border when focused
                                         }
                                     }} fullWidth notched placeholder="Name" />
-
                                 </Grid>
 
                                 {/* Email Field */}
@@ -203,7 +199,6 @@ const Contact = () => {
 
                                 {/* Phone Field */}
                                 <Grid item size={{ xs: 12 }}>
-
                                     <InputLabel sx={{ color: "#0E2A46", fontWeight: 400, fontSize: "18px", mb: 1 }}>Phone*</InputLabel>
                                     <OutlinedInput sx={{
                                         backgroundColor: "white",
@@ -217,12 +212,10 @@ const Contact = () => {
                                             border: "none" // Removes border when focused
                                         }
                                     }} fullWidth notched placeholder="Phone" />
-
                                 </Grid>
 
                                 {/* Subject Field */}
                                 <Grid item size={{ xs: 12 }}>
-
                                     <InputLabel sx={{ color: "#0E2A46", fontWeight: 400, fontSize: "18px", mb: 1 }}>Subject*</InputLabel>
                                     <OutlinedInput sx={{
                                         backgroundColor: "white",
@@ -236,12 +229,10 @@ const Contact = () => {
                                             border: "none" // Removes border when focused
                                         }
                                     }} fullWidth notched placeholder="Subject" />
-
                                 </Grid>
 
                                 {/* Message Field */}
                                 <Grid item size={{ xs: 12 }}>
-
                                     <InputLabel sx={{ color: "#0E2A46", fontWeight: 400, fontSize: "18px", mb: 1 }}>Message*</InputLabel>
                                     <OutlinedInput
                                         fullWidth
@@ -262,7 +253,6 @@ const Contact = () => {
                                             }
                                         }}
                                     />
-
                                 </Grid>
 
                                 {/* Submit Button */}
@@ -283,11 +273,14 @@ const Contact = () => {
                                         SEND MESSAGE
                                     </Button>
                                 </Grid>
+
                             </Grid>
                         </Grid>
+
                     </Grid>
                 </Box>
             </Box >
+            <GetInTouch />
         </>
     )
 }

@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SectionHeader from '../components/SectionHeader'
+import GetInTouch from "../components/getInTouch/GetInTouch";
 
 const faqData = [
     {
@@ -132,6 +133,8 @@ const FAQ = () => {
                     </Accordion>
                 ))}
             </Box >
+
+            <GetInTouch />
         </>
     )
 }
