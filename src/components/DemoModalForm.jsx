@@ -29,7 +29,7 @@ const DemoModalForm = ({ open, onClose }) => {
     const handleCloseSnackbar = () => {
         setSnackbar((prev) => ({ ...prev, open: false }));
     };
-
+    console.log("hello")
     const onSubmit = async (data) => {
         try {
             // console.log("try")
