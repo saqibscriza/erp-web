@@ -109,8 +109,8 @@ const AboutUs = () => {
                     </Typography>
 
                     <Typography x={{ color: "#4D5756", fontSize: "17px", fontWeight: 400, mb: 4 }}>
-                        We've seen projects fail due to poor planning and communication.
-                        We're here to ensure yours succeeds — seamlessly and on time.
+                        At the heart of every successful educational institution is a smart and efficient management system — and that's exactly what we deliver. We are a team of passionate innovators, educators, and technologists committed to transforming the way schools operate with our comprehensive, cloud-based School Management Software.
+                        With over 50+ powerful modules, our platform offers a seamless, all-in-one solution that simplifies every aspect of school administration — from admissions, academics, and examinations to student records, HR, payroll, transport, and beyond. Whether you're managing a single school or a group of institutions, our system is designed to scale with your needs and grow with your vision.
                     </Typography>
 
                     <Grid container spacing={4} sx={{ mt: 2, mb: 2 }}>
@@ -119,7 +119,7 @@ const AboutUs = () => {
                                 Our Mission:
                             </Typography>
                             <Typography color="text.secondary">
-                                Empowering growth with secure, scalable, and innovative software solutions.
+                                To build a unified school management platform that eliminates manual tasks, promotes data-driven decisions, and helps educators, students, and administrators thrive in a digital-first world
                             </Typography>
                         </Grid>
 
@@ -128,7 +128,7 @@ const AboutUs = () => {
                                 Our Vision:
                             </Typography>
                             <Typography color="text.secondary">
-                                Innovative, scalable solutions empowering businesses and education for a smarter future.
+                                To empower educational institutions with modern, intelligent technology that enhances productivity, improves transparency, and delivers a superior learning experience.
                             </Typography>
                         </Grid>
                     </Grid>
