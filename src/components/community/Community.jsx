@@ -16,40 +16,70 @@ const stats = [
 const testimonials = [
     {
         id: 1,
-        quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda minima quisquam accusamus odio consequuntur quis quae, rerum fugit laborum distinctio repellendus at, pariatur consectetur autem ratione ducimus aperiam necessitatibus nesciunt?",
+        quote: "Implementing this school management system has been a game- changer.The platform's 50+ modules have helped us centralize every function improved our school’s efficiency beyond expectations.",
         name: "Kathy Sullivan",
         position: "CEO at Edwards"
     },
     {
         id: 2,
-        quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda minima quisquam accusamus odio consequuntur quis quae, rerum fugit laborum distinctio repellendus at, pariatur consectetur autem ratione ducimus aperiam necessitatibus nesciunt?",
+        quote: "What impressed us most is how user-friendly and customizable the system is. It adapts perfectly to our school’s unique needs and has significantly reduced our administrative burden.",
         name: "John Doe",
         position: "CTO at TechCorp"
     },
     {
         id: 3,
-        quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda minima quisquam accusamus odio consequuntur quis quae, rerum fugit laborum distinctio repellendus at, pariatur consectetur autem ratione ducimus aperiam necessitatibus nesciunt?",
+        quote: "From integration to training and support, the entire experience has been seamless. The platform is secure, scalable, and runs effortlessly on cloud — exactly what a modern school needs.",
         name: "Jane Smith",
         position: "Marketing Director"
     },
     {
         id: 4,
-        quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda minima quisquam accusamus odio consequuntur quis quae, rerum fugit laborum distinctio repellendus at, pariatur consectetur autem ratione ducimus aperiam necessitatibus nesciunt?",
+        quote: "The Academic Management module has simplified lesson planning and timetable scheduling. Teachers now spend more time teaching and less time on paperwork.",
         name: "Jane Smith",
         position: "Marketing Director"
     }, {
         id: 5,
-        quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda minima quisquam accusamus odio consequuntur quis quae, rerum fugit laborum distinctio repellendus at, pariatur consectetur autem ratione ducimus aperiam necessitatibus nesciunt?",
+        quote: "Managing fees, student records, and HR used to be a challenge. This system has automated everything and brought in complete transparency. We couldn't be happier!",
         name: "Jane Smith",
         position: "Marketing Director"
     }, {
         id: 6,
-        quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda minima quisquam accusamus odio consequuntur quis quae, rerum fugit laborum distinctio repellendus at, pariatur consectetur autem ratione ducimus aperiam necessitatibus nesciunt?",
+        quote: "As a teacher, I find the platform extremely helpful. Sharing assignments, tracking attendance, and accessing student data has never been easier. It makes teaching more efficient and organized.",
         name: "Jane Smith",
         position: "Marketing Director"
     }, {
         id: 7,
-        quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda minima quisquam accusamus odio consequuntur quis quae, rerum fugit laborum distinctio repellendus at, pariatur consectetur autem ratione ducimus aperiam necessitatibus nesciunt?",
+        quote: "The Exam Management module is excellent. From setting up exams to generating report cards, everything is automated, accurate, and time-saving. It's a blessing during board exam season.",
+        name: "Jane Smith",
+        position: "Marketing Director"
+    },
+    {
+        id: 8,
+        quote: "The HR and payroll modules are so well-designed. They’ve reduced our paperwork drastically and made staff management effortless. The leave and appraisal systems are especially impressive.",
+        name: "Jane Smith",
+        position: "Marketing Director"
+    },
+    {
+        id: 9,
+        quote: "As a parent, I love the mobile app! I can track my child’s attendance, exam results, homework, and even fees — all in real-time. It keeps me engaged and informed.",
+        name: "Jane Smith",
+        position: "Marketing Director"
+    },
+    {
+        id: 10,
+        quote: "For multi-campus management, this software is unbeatable. Centralized data access, role-based control, and detailed analytics have helped us manage multiple schools with ease.",
+        name: "Jane Smith",
+        position: "Marketing Director"
+    },
+    {
+        id: 11,
+        quote: "The Library Management module has helped us digitize our entire inventory. Issuing and returning books, tracking overdue items — it’s all quick and hassle-free now.",
+        name: "Jane Smith",
+        position: "Marketing Director"
+    },
+    {
+        id: 12,
+        quote: "With the transport and GPS tracking features, we ensure student safety while optimizing our routes. Parents are happy, and we’ve seen a significant reduction in delays.",
         name: "Jane Smith",
         position: "Marketing Director"
     }
@@ -123,10 +153,7 @@ const Community = () => {
             backgroundRepeat: "no-repeat",
             mt: 10
         }}>
-
             {/* Top Green Stats Box */}
-
-
             <Box
                 sx={{
                     backgroundColor: "#3A7E76",
@@ -143,7 +170,6 @@ const Community = () => {
                     transform: "translate(-50%, -50%)",
                     display: "flex",
                     gap: { xs: 2, sm: 3, md: 5 },
-
                     justifyContent: "center",
                     color: "white",
                     zIndex: 2,
@@ -220,9 +246,10 @@ const Community = () => {
                                     borderRadius: "15px",
                                     border: "1px solid black",
                                     p: 2,
-                                    minHeight: "250px",
-                                    height: "100%",
+                                    minHeight: "330px",
+
                                     maxWidth: { xs: "250px", sm: "300px" },
+
                                     textAlign: "left",
                                     position: "relative",
                                     mx: 'auto',
