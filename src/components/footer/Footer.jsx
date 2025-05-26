@@ -19,6 +19,7 @@ const Footer = () => {
             }}>
                 {/* Address , Phone & Email */}
                 <Container maxWidth={false} sx={{ borderBottom: "1px solid white" }}>
+                    
                     <Grid container spacing={{ xs: 0, md: 3 }} >
                         <Grid size={{ xs: 12, lg: 4 }} >
                             <Box sx={{
@@ -59,6 +60,7 @@ const Footer = () => {
                             </Box>
                         </Grid>
                     </Grid>
+
                 </Container>
 
 
@@ -118,7 +120,6 @@ const Footer = () => {
                                             sx={{
                                                 textDecoration: 'none',
                                                 color: 'inherit',
-
                                             }}
                                         >
                                             {item.name}
@@ -127,9 +128,6 @@ const Footer = () => {
                                 ))}
                             </Box>
                         </Grid>
-
-
-
 
                         {/* Subscribe */}
                         <Grid sx={{ pl: { xs: 5, md: 0 } }} size={{ xs: 12, md: 4 }}
@@ -147,8 +145,8 @@ const Footer = () => {
                             </Box>
                         </Grid>
                     </Grid>
-
                 </Container>
+
 
                 {/* Copyright */}
                 <Box textAlign="center" sx={{ bgcolor: "#04857A", p: 2 }}>

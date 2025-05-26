@@ -10,25 +10,43 @@ const testimonials = [
         name: 'Vivaan Sharma',
         role: 'CEO at House of Ramen',
         avatar: '/avatars/vivaan.jpg',
-        text: '“Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci nulla pellentesque dignissim enim. Amet consectetur adipiscing”',
+        text: `"Implementing this school management system has been a game-changer. The platform's 50+ modules have helped us centralize every function — from admissions to HR — and improved our school’s efficiency beyond expectations."`,
     },
     {
         name: 'Arjun Reddy',
         role: 'CEO at ordian It',
         avatar: '/avatars/arjun.jpg',
-        text: '“Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci nulla pellentesque dignissim enim. Amet consectetur adipiscing”',
+        text: `"What impressed us most is how user-friendly and customizable the system is. It adapts perfectly to our school’s unique needs and has significantly reduced our administrative burden."`,
     },
     {
         name: 'Rohan Kapoor',
         role: 'CEO at Edwards',
         avatar: '/avatars/rohan.jpg',
-        text: '“Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci nulla pellentesque dignissim enim. Amet consectetur adipiscing”',
+        text: `"From integration to training and support, the entire experience has been seamless. The platform is secure, scalable, and runs effortlessly on cloud — exactly what a modern school needs."`,
     },
     {
         name: 'Aditya Iyer',
         role: 'CEO at House of Ramen',
         avatar: '/avatars/aditya.jpg',
-        text: '“Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci nulla pellentesque dignissim enim. Amet consectetur adipiscing”',
+        text: `"The Academic Management module has simplified lesson planning and timetable scheduling. Teachers now spend more time teaching and less time on paperwork."`,
+    },
+    {
+        name: 'Sai Prasad',
+        role: 'CEO at ordian It',
+        avatar: '/avatars/sai.jpg',
+        text: `"Managing fees, student records, and HR used to be a challenge. This system has automated everything and brought in complete transparency. We couldn't be happier!"`,
+    },
+    {
+        name: 'Karan Malhotra',
+        role: 'CEO at Edwards',
+        avatar: '/avatars/karan.jpg',
+        text: `"As a teacher, I find the platform extremely helpful. Sharing assignments, tracking attendance, and accessing student data has never been easier. It makes teaching more efficient and organized."`,
+    },
+    {
+        name: 'Aditya Iyer',
+        role: 'CEO at House of Ramen',
+        avatar: '/avatars/aditya.jpg',
+        text: `"The Exam Management module is excellent. From setting up exams to generating report cards, everything is automated, accurate, and time-saving. It's a blessing during board exam season."`,
     },
     {
         name: 'Sai Prasad',
@@ -40,13 +58,13 @@ const testimonials = [
         name: 'Karan Malhotra',
         role: 'CEO at Edwards',
         avatar: '/avatars/karan.jpg',
-        text: '“Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci nulla pellentesque dignissim enim. Amet consectetur adipiscing”',
+        text: `"The HR and payroll modules are so well-designed. They’ve reduced our paperwork drastically and made staff management effortless. The leave and appraisal systems are especially impressive."`,
     },
     {
         name: 'Aditya Iyer',
         role: 'CEO at House of Ramen',
         avatar: '/avatars/aditya.jpg',
-        text: '“Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci nulla pellentesque dignissim enim. Amet consectetur adipiscing”',
+        text: `"As a parent, I love the mobile app! I can track my child’s attendance, exam results, homework, and even fees — all in real-time. It keeps me engaged and informed."`,
     },
     {
         name: 'Sai Prasad',
@@ -58,32 +76,26 @@ const testimonials = [
         name: 'Karan Malhotra',
         role: 'CEO at Edwards',
         avatar: '/avatars/karan.jpg',
-        text: '“Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci nulla pellentesque dignissim enim. Amet consectetur adipiscing”',
-    },
-    {
-        name: 'Aditya Iyer',
-        role: 'CEO at House of Ramen',
-        avatar: '/avatars/aditya.jpg',
-        text: '“Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci nulla pellentesque dignissim enim. Amet consectetur adipiscing”',
-    },
-    {
-        name: 'Sai Prasad',
-        role: 'CEO at ordian It',
-        avatar: '/avatars/sai.jpg',
-        text: '“Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci nulla pellentesque dignissim enim. Amet consectetur adipiscing”',
+        text: `"For multi-campus management, this software is unbeatable. Centralized data access, role-based control, and detailed analytics have helped us manage multiple schools with ease."`,
     },
     {
         name: 'Karan Malhotra',
         role: 'CEO at Edwards',
         avatar: '/avatars/karan.jpg',
-        text: '“Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci nulla pellentesque dignissim enim. Amet consectetur adipiscing”',
+        text: `"The Library Management module has helped us digitize our entire inventory. Issuing and returning books, tracking overdue items — it’s all quick and hassle-free now."`,
+    },
+    {
+        name: 'Karan Malhotra',
+        role: 'CEO at Edwards',
+        avatar: '/avatars/karan.jpg',
+        text: `"With the transport and GPS tracking features, we ensure student safety while optimizing our routes. Parents are happy, and we’ve seen a significant reduction in delays."
+`,
     },
 ];
 const Testimonials = () => {
     return (
         <>
             <MenuPage title="TESTIMONIALS" subtitle="Home" />
-
             {/* <SectionHeader title="TESTIMONIALS">
                 Home <span style={{ color: '#F15A29' }}> // </span> Testimonials
             </SectionHeader> */}
