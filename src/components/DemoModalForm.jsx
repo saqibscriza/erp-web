@@ -29,7 +29,6 @@ const DemoModalForm = ({ open, onClose }) => {
     const handleCloseSnackbar = () => {
         setSnackbar((prev) => ({ ...prev, open: false }));
     };
-    console.log("hello")
     const onSubmit = async (data) => {
         try {
             // console.log("try")
@@ -40,7 +39,6 @@ const DemoModalForm = ({ open, onClose }) => {
             formData.append('schoolName', data.schoolName);
             formData.append('email', data.email);
 
-
             const response = await axios.post("https://www.auth.edu2all.in/sch/request/create", formData,);
 
             console.log("Registeration Successfully done", response);
@@ -50,7 +48,6 @@ const DemoModalForm = ({ open, onClose }) => {
                     reset();
                 }, 2000);
                 setSuccess(true)
-
             } else {
                 setSnackbar({ open: true, message: response?.data?.message || 'Error occurred', severity: 'error' });
             }
@@ -64,6 +61,7 @@ const DemoModalForm = ({ open, onClose }) => {
         setSuccess(false);
         onClose();
     };
+
 
     return (
         <>
@@ -100,7 +98,6 @@ const DemoModalForm = ({ open, onClose }) => {
                                         {errors.email.message}
                                     </Typography>
                                 )}
-
 
                                 <OutlinedInput id="contactNo" type="text" {...register("contactNo", { required: 'This field is required', validate: { minLength: (value) => value.length <= 10 || 'Contact number must not be more than 10 digits', maxLength: (value) => value.length === 10 || 'Contact number must be exactly 10 digits', pattern: (value) => /^[6-9]\d{9}$/.test(value) || 'Contact number must contain only digits. Any characters or special characters are not allowed', } })} placeholder="Enter Contact No" fullWidth error={Boolean(errors.contactNo)} sx={{ backgroundColor: 'white', mb: 1 }} />
                                 {errors.contactNo && (
